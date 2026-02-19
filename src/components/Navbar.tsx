@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import '../index.css'; // Ensure global styles are applied
+import '../index.css'; 
 
 // Add specific Navbar styles here or in a separate Navbar.css file
 // For brevity, I am assuming you will copy the .navbar CSS from your HTML 
@@ -33,7 +33,7 @@ export default function Navbar() {
             </button>
 
             <Link to="/" className="logo">
-              <div className="logo-icon" style={{ width: '140px', height: '40px' }}>
+              <div className="logo-icon" style={{ width: '160px', height: '50px' }}>
                 <img src="/image/logo.png" alt="bitYantra" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
               </div>
             </Link>

@@ -126,7 +126,7 @@ ul { list-style: none; }
 .badge-accent { width: 90px; height: 5px; }
 .about-section-title { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
 .about-section-subtitle { font-size: 14px; color: var(--color-text-muted); }
-
+ 
 /* Story Section */
 .about-section--story {
     border-radius: 28px;
@@ -601,108 +601,163 @@ ul { list-style: none; }
    HOME PAGE STYLES
    ========================= */
 
-/* Hero Section */
+/* Hero Section - FULL SCREEN */
 .hero-section {
-    margin-top: 32px;
+  /* full viewport */
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  /* optional: if you have a sticky header, set this var globally */
+  /* --header-h: 72px; */
+  padding: calc(var(--header-h, 0px) + 32px) 0 48px;
+
+  /* full-bleed premium background */
+  background:
+    radial-gradient(circle at 20% 25%, rgba(29, 155, 240, 0.16), transparent 42%),
+    radial-gradient(circle at 85% 15%, rgba(102, 126, 234, 0.18), transparent 40%),
+    linear-gradient(180deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.0) 100%);
+  position: relative;
+  overflow: hidden;
 }
 
+/* background blobs (moved from .hero-inner to full section) */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -220px;
+  top: -220px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(29, 155, 240, 0.22), transparent 65%);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  left: -180px;
+  bottom: -220px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 20% 70%, rgba(15, 23, 42, 0.08), transparent 70%);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+/* Content wrapper (NO WHITE BOX) */
 .hero-inner {
-    width: min(96vw, 1320px);
-    margin: 0 auto;
-    background: var(--color-surface);
-    border-radius: 20px;
-    padding: 30px 30px 26px;
-    display: grid;
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
-    gap: 26px;
-    align-items: center;
-    border: 1px solid var(--color-border-subtle);
-    position: relative;
-    overflow: hidden;
+  width: min(96vw, 1320px);
+  margin: 0 auto;
+
+  /* remove boxed look */
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(18px, 3vw, 40px);
+  align-items: center;
+
+  position: relative;
+  z-index: 1; /* above background blobs */
 }
 
-/* Hero Background Decorations */
-.hero-inner::before {
-    content: "";
-    position: absolute;
-    width: 320px;
-    height: 320px;
-    right: -120px;
-    top: -120px;
-    border-radius: 999px;
-    background: radial-gradient(circle at 30% 30%, rgba(29, 155, 240, 0.25), transparent 65%);
-    opacity: 0.8;
-    pointer-events: none;
-}
-
-.hero-inner::after {
-    content: "";
-    position: absolute;
-    width: 260px;
-    height: 260px;
-    left: -80px;
-    bottom: -90px;
-    border-radius: 999px;
-    background: radial-gradient(circle at 20% 70%, rgba(15, 23, 42, 0.08), transparent 70%);
-    opacity: 0.8;
-    pointer-events: none;
-}
-
-.hero-left, .hero-right {
-    position: relative;
-    z-index: 1;
+.hero-left,
+.hero-right {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-right {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
+/* Typography */
 .hero-title {
-    font-size: clamp(30px, 4.4vw, 40px);
-    margin-bottom: 10px;
-    font-weight: 750;
-    letter-spacing: -0.03em;
-}
-
-.hero-title span {
-    color: var(--color-primary-dark);
+  font-size: clamp(34px, 4.4vw, 52px);
+  margin-bottom: 12px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--color-text-main);
 }
 
 .hero-subtitle {
-    font-size: 14px;
-    color: var(--color-text-muted);
-    max-width: 420px;
-    margin-bottom: 18px;
+  font-size: 15px;
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin-bottom: 18px;
 }
 
+/* Buttons */
 .hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .hero-btn {
-    padding: 11px 20px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-    box-shadow: none;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 650;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  box-shadow: none;
 }
 
 .hero-btn-dark {
-    background: var(--color-primary);
-    color: white;
+  background: var(--color-primary);
+  color: white;
 }
 
 .hero-btn-dark:hover {
-    background: var(--color-primary-dark);
-    transform: translateY(-1px);
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.hero-btn-outline:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+/* Stats: glass, not white */
+.hero-stat-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+}
+
+@media (max-width: 980px) {
+  .hero-section {
+    padding: calc(var(--header-h, 0px) + 24px) 0 36px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-section {
+    min-height: auto; /* mobile: avoid awkward overflow */
+    padding: calc(var(--header-h, 0px) + 18px) 0 28px;
+  }
 }
 
 /* Products / Services Section Layout */

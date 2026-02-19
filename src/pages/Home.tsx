@@ -71,16 +71,16 @@ export default function Home() {
       
     </div>
 
-    {/* HERO RIGHT (UPDATED) */}
+    {/* HERO RIGHT */}
 <div className="hero-right">
-  <div className="hero-art" aria-hidden="true">
-    {/* soft halo / orbit */}
+  <div className="hero-art hero-art--layered" aria-hidden="true">
+    {/* halo / orbits behind */}
     <div className="hero-halo" />
     <div className="hero-orbit hero-orbit-1" />
     <div className="hero-orbit hero-orbit-2" />
 
-    {/* Main Web Preview (Web Dev) */}
-    <div className="hero-web">
+    {/* WEB PREVIEW */}
+    <div className="hero-web hero-layer web">
       <div className="hero-web-top">
         <span className="dot dot-red" />
         <span className="dot dot-yellow" />
@@ -89,7 +89,6 @@ export default function Home() {
       </div>
 
       <div className="hero-web-body">
-        {/* two cards */}
         <div className="hero-web-card-row">
           <div className="hero-web-card">
             <div className="sk sk-title" />
@@ -103,7 +102,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* scrolling section */}
         <div className="hero-web-scroll">
           <div className="hero-web-scroll-inner">
             <div className="sk sk-line long" />
@@ -118,7 +116,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* mini widgets */}
         <div className="hero-web-widgets">
           <div className="hero-mini-widget">
             <div className="sk sk-chip" />
@@ -134,10 +131,13 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* tiny reaction near web */}
+      <div className="hero-bubble hero-bubble-heart" />
     </div>
 
-    {/* Mobile Preview (App Dev) */}
-    <div className="hero-phone">
+    {/* PHONE */}
+    <div className="hero-phone hero-layer phone">
       <div className="hero-phone-notch" />
       <div className="hero-phone-screen">
         <div className="hero-phone-scroll">
@@ -150,47 +150,75 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* like bubble */}
+      <div className="hero-bubble hero-bubble-like" />
     </div>
 
-    {/* Chart (Digital Marketing) */}
-    <div className="hero-chart-card">
-      <div className="hero-chart-top">
-        <span className="hero-chart-chip" />
-        <span className="hero-chart-chip warm" />
-      </div>
+   
+    {/* MARKETING CHART */}
+<div className="hero-chart-card hero-layer chart">
+  <div className="hero-chart-top">
+    <span className="hero-chart-chip" />
+    <span className="hero-chart-chip warm" />
+  </div>
 
-      <svg className="hero-line" viewBox="0 0 220 90" fill="none">
-        <path
-          className="hero-line-path"
-          d="M10 75 C 40 62, 62 70, 82 55 C 102 40, 124 54, 142 38 C 160 22, 182 34, 210 14"
-        />
-        <circle className="hero-line-dot" cx="210" cy="14" r="4" />
-      </svg>
+  <div className="hero-chart-wrap">
+    <svg className="hero-chart-svg" viewBox="0 0 320 150" fill="none">
+      {/* grid */}
+      <g className="hero-chart-grid">
+        {/* vertical grid */}
+        {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+          <line key={`v-${i}`} x1={20 + i * 45} y1="14" x2={20 + i * 45} y2="128" />
+        ))}
+        {/* horizontal grid */}
+        {[0, 1, 2, 3, 4].map((i) => (
+          <line key={`h-${i}`} x1="20" y1={14 + i * 28} x2="300" y2={14 + i * 28} />
+        ))}
+      </g>
 
-      <div className="hero-bars">
-        <span className="hb" />
-        <span className="hb" />
-        <span className="hb" />
-      </div>
-    </div>
+      {/* axis baseline */}
+      <path className="hero-chart-axis" d="M20 128 H300" />
 
-    {/* IoT / Hardware Chip */}
-    <div className="hero-iot">
-      <div className="hero-iot-pin left" />
-      <div className="hero-iot-pin left" />
-      <div className="hero-iot-pin left" />
-      <div className="hero-iot-core" />
-      <div className="hero-iot-pin right" />
-      <div className="hero-iot-pin right" />
-      <div className="hero-iot-pin right" />
-    </div>
+      {/* line path (slower, realistic) */}
+      <path
+        className="hero-chart-line"
+        d="
+          M20 112
+          C 45 110, 62 104, 80 106
+          C 102 108, 118 98, 140 96
+          C 160 94, 175 92, 190 86
+          C 208 78, 225 84, 242 74
+          C 262 62, 275 66, 300 48
+        "
+      />
 
-    {/* Reactions / Social proof */}
-    <div className="hero-bubble hero-bubble-heart" />
-    <div className="hero-bubble hero-bubble-like" />
-    <div className="hero-bubble hero-bubble-cloud" />
+      {/* area fill under line */}
+      <path
+        className="hero-chart-area"
+        d="
+          M20 112
+          C 45 110, 62 104, 80 106
+          C 102 108, 118 98, 140 96
+          C 160 94, 175 92, 190 86
+          C 208 78, 225 84, 242 74
+          C 262 62, 275 66, 300 48
+          L300 128 L20 128 Z
+        "
+      />
+
+      {/* end dot */}
+      <circle className="hero-chart-dot" cx="300" cy="48" r="5" />
+    </svg>
+
+    
   </div>
 </div>
+
+  </div>
+</div>
+
+
 
 
 
@@ -308,19 +336,7 @@ export default function Home() {
     </div>
   </div>
 
-  {/* Text RIGHT (minimal) */}
-  {/* <div className="service-split-copy">
-    <h3 className="service-title">Web Development</h3>
-    <p className="service-subtitle">
-      Clean UI, fast performance, and scalable architecture — built for growth.
-    </p>
 
-    <div className="service-chiprow">
-      <span className="service-chip"><Check size={16} /> Responsive</span>
-      <span className="service-chip"><Check size={16} /> SEO-ready</span>
-      <span className="service-chip"><Check size={16} /> Secure</span>
-    </div>
-  </div> */}
   <div style={{ flex: '1 1 300px', minWidth: '280px' }}>
                   <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'white', marginBottom: '12px' }}>
                     Web Development

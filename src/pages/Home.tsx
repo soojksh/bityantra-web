@@ -68,94 +68,136 @@ export default function Home() {
         </button>
       </div>
 
-      {/* Stats Section */}
-      <div className="hero-stats">
-        {[
-          { number: "100+", label: "Projects Delivered" },
-          { number: "24/7", label: "Support Coverage" },
-          { number: "50+", label: "Active Clients" },
-        ].map((stat, i) => (
-          <div key={i} className="hero-stat-card">
-            <div className="hero-stat-number">{stat.number}</div>
-            <div className="hero-stat-label">{stat.label}</div>
-          </div>
-        ))}
-      </div>
+      
     </div>
 
-    <div className="hero-right">
-      {/* Clean product preview panel */}
-      <div className="hero-preview">
-        <div className="hero-preview-top">
-          <div className="hero-dots">
-            <span className="dot dot-red" />
-            <span className="dot dot-yellow" />
-            <span className="dot dot-green" />
+    {/* HERO RIGHT (UPDATED) */}
+<div className="hero-right">
+  <div className="hero-art" aria-hidden="true">
+    {/* soft halo / orbit */}
+    <div className="hero-halo" />
+    <div className="hero-orbit hero-orbit-1" />
+    <div className="hero-orbit hero-orbit-2" />
+
+    {/* Main Web Preview (Web Dev) */}
+    <div className="hero-web">
+      <div className="hero-web-top">
+        <span className="dot dot-red" />
+        <span className="dot dot-yellow" />
+        <span className="dot dot-green" />
+        <span className="hero-web-pill" />
+      </div>
+
+      <div className="hero-web-body">
+        {/* two cards */}
+        <div className="hero-web-card-row">
+          <div className="hero-web-card">
+            <div className="sk sk-title" />
+            <div className="sk sk-line" />
+            <div className="sk sk-line short" />
           </div>
-          <div className="hero-preview-title">Project Overview</div>
-          <div className="hero-preview-badge">Live</div>
+          <div className="hero-web-card">
+            <div className="sk sk-title" />
+            <div className="sk sk-line" />
+            <div className="sk sk-line short" />
+          </div>
         </div>
 
-        <div className="hero-preview-body">
-          <div className="hero-metric-row">
-            <div className="hero-metric">
-              <div className="hero-metric-label">Deployment</div>
-              <div className="hero-metric-value">Stable</div>
-            </div>
-            <div className="hero-metric">
-              <div className="hero-metric-label">Latency</div>
-              <div className="hero-metric-value">~120ms</div>
-            </div>
-            <div className="hero-metric">
-              <div className="hero-metric-label">Uptime</div>
-              <div className="hero-metric-value">99.9%</div>
-            </div>
+        {/* scrolling section */}
+        <div className="hero-web-scroll">
+          <div className="hero-web-scroll-inner">
+            <div className="sk sk-line long" />
+            <div className="sk sk-line" />
+            <div className="sk sk-line short" />
+            <div className="sk sk-block" />
+
+            <div className="sk sk-line long" />
+            <div className="sk sk-line" />
+            <div className="sk sk-line short" />
+            <div className="sk sk-block" />
           </div>
+        </div>
 
-          <div className="hero-chart">
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
+        {/* mini widgets */}
+        <div className="hero-web-widgets">
+          <div className="hero-mini-widget">
+            <div className="sk sk-chip" />
+            <div className="sk sk-line short" />
           </div>
-
-          <div className="hero-list">
-            <div className="hero-list-item">
-              <div className="bullet" />
-              <div className="hero-list-text">
-                <div className="hero-list-title">Design system</div>
-                <div className="hero-list-sub">Consistent UI across web & mobile</div>
-              </div>
-              <div className="hero-list-tag">Done</div>
-            </div>
-
-            <div className="hero-list-item">
-              <div className="bullet" />
-              <div className="hero-list-text">
-                <div className="hero-list-title">API integration</div>
-                <div className="hero-list-sub">Secure endpoints + monitoring</div>
-              </div>
-              <div className="hero-list-tag">Done</div>
-            </div>
-
-            <div className="hero-list-item">
-              <div className="bullet" />
-              <div className="hero-list-text">
-                <div className="hero-list-title">IoT pipeline</div>
-                <div className="hero-list-sub">Realtime device telemetry</div>
-              </div>
-              <div className="hero-list-tag hero-list-tag-wip">In progress</div>
-            </div>
+          <div className="hero-mini-widget">
+            <div className="sk sk-chip alt" />
+            <div className="sk sk-line short" />
+          </div>
+          <div className="hero-mini-widget">
+            <div className="sk sk-chip warm" />
+            <div className="sk sk-line short" />
           </div>
         </div>
       </div>
     </div>
+
+    {/* Mobile Preview (App Dev) */}
+    <div className="hero-phone">
+      <div className="hero-phone-notch" />
+      <div className="hero-phone-screen">
+        <div className="hero-phone-scroll">
+          <div className="hero-phone-scroll-inner">
+            <div className="ph ph-card" />
+            <div className="ph ph-card" />
+            <div className="ph ph-card tall" />
+            <div className="ph ph-card" />
+            <div className="ph ph-card" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Chart (Digital Marketing) */}
+    <div className="hero-chart-card">
+      <div className="hero-chart-top">
+        <span className="hero-chart-chip" />
+        <span className="hero-chart-chip warm" />
+      </div>
+
+      <svg className="hero-line" viewBox="0 0 220 90" fill="none">
+        <path
+          className="hero-line-path"
+          d="M10 75 C 40 62, 62 70, 82 55 C 102 40, 124 54, 142 38 C 160 22, 182 34, 210 14"
+        />
+        <circle className="hero-line-dot" cx="210" cy="14" r="4" />
+      </svg>
+
+      <div className="hero-bars">
+        <span className="hb" />
+        <span className="hb" />
+        <span className="hb" />
+      </div>
+    </div>
+
+    {/* IoT / Hardware Chip */}
+    <div className="hero-iot">
+      <div className="hero-iot-pin left" />
+      <div className="hero-iot-pin left" />
+      <div className="hero-iot-pin left" />
+      <div className="hero-iot-core" />
+      <div className="hero-iot-pin right" />
+      <div className="hero-iot-pin right" />
+      <div className="hero-iot-pin right" />
+    </div>
+
+    {/* Reactions / Social proof */}
+    <div className="hero-bubble hero-bubble-heart" />
+    <div className="hero-bubble hero-bubble-like" />
+    <div className="hero-bubble hero-bubble-cloud" />
+  </div>
+</div>
+
+
+
+
+
+
+
   </div>
 </section>
 
@@ -196,166 +238,119 @@ export default function Home() {
           <div className="products-content">
             {/* Website Development */}
             <div id="website-dev" className="product-display">
-              <h2>Website Development</h2>
-              <p>Clean, responsive sites that convert visitors into customers</p>
-              
-              <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
-                {/* Feature Card 1 */}
-                <div style={{
-                  background: 'white',
-                  borderRadius: '16px',
-                  padding: '24px',
-                  border: '1px solid var(--color-border-subtle)',
-                  transition: 'transform 0.2s ease',
-                  cursor: 'pointer'
-                }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
-                   onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <div style={{
-                    width: '50px',
-                    height: '50px',
-                    borderRadius: '12px',
-                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '16px'
-                  }}>
-                    <Globe size={26} color="white" />
-                  </div>
-                  <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px' }}>Responsive Design</h3>
-                  <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', marginBottom: '12px' }}>
-                    Pixel-perfect designs that work seamlessly across all devices
-                  </p>
-                  <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                    <li style={{ fontSize: '12px', color: 'var(--color-text-muted)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <Check size={14} color="#1d9bf0" /> Mobile-first approach
-                    </li>
-                    <li style={{ fontSize: '12px', color: 'var(--color-text-muted)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <Check size={14} color="#1d9bf0" /> Fast loading times
-                    </li>
-                  </ul>
-                </div>
+  <h2>Website Development</h2>
+  <p>Clean, responsive sites that convert visitors into customers</p>
 
-                {/* Feature Card 2 */}
-                <div style={{
-                  background: 'white',
-                  borderRadius: '16px',
-                  padding: '24px',
-                  border: '1px solid var(--color-border-subtle)',
-                  transition: 'transform 0.2s ease',
-                  cursor: 'pointer'
-                }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
-                   onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <div style={{
-                    width: '50px',
-                    height: '50px',
-                    borderRadius: '12px',
-                    background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '16px'
-                  }}>
-                    <Zap size={26} color="white" />
-                  </div>
-                  <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px' }}>Performance</h3>
-                  <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', marginBottom: '12px' }}>
-                    Blazing fast websites optimized for search engines
-                  </p>
-                  <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                    <li style={{ fontSize: '12px', color: 'var(--color-text-muted)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <Check size={14} color="#1d9bf0" /> SEO optimized
-                    </li>
-                    <li style={{ fontSize: '12px', color: 'var(--color-text-muted)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <Check size={14} color="#1d9bf0" /> Core Web Vitals
-                    </li>
-                  </ul>
-                </div>
+  {/* Like mobile-app, but VISUAL LEFT + TEXT RIGHT */}
+  <div className="service-split service-split--web service-split--reverse service-split--webpro">
+  {/* Visuals LEFT */}
+  <div className="service-split-visual">
+    <div className="web-illus">
+      {/* Browser window */}
+      <div className="web-illus-browser">
+        <div className="web-illus-top">
+          <span className="dot dot-red" />
+          <span className="dot dot-yellow" />
+          <span className="dot dot-green" />
+          <div className="web-illus-url">bitYantra.dev • Web Platform</div>
+          <div className="web-illus-status">Live</div>
+        </div>
 
-                {/* Feature Card 3 */}
-                <div style={{
-                  background: 'white',
-                  borderRadius: '16px',
-                  padding: '24px',
-                  border: '1px solid var(--color-border-subtle)',
-                  transition: 'transform 0.2s ease',
-                  cursor: 'pointer'
-                }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
-                   onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <div style={{
-                    width: '50px',
-                    height: '50px',
-                    borderRadius: '12px',
-                    background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '16px'
-                  }}>
-                    <Shield size={26} color="white" />
-                  </div>
-                  <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px' }}>Security First</h3>
-                  <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', marginBottom: '12px' }}>
-                    Enterprise-grade security for your peace of mind
-                  </p>
-                  <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                    <li style={{ fontSize: '12px', color: 'var(--color-text-muted)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <Check size={14} color="#1d9bf0" /> SSL encryption
-                    </li>
-                    <li style={{ fontSize: '12px', color: 'var(--color-text-muted)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <Check size={14} color="#1d9bf0" /> Regular updates
-                    </li>
-                  </ul>
-                </div>
-              </div>
+        <div className="web-illus-body">
+          <div className="web-illus-nav">
+            <div className="sk sk-logo" />
+            <div className="sk sk-link" />
+            <div className="sk sk-link" />
+            <div className="sk sk-link short" />
+            <div className="sk sk-cta" />
+          </div>
 
-              {/* Visual Gallery */}
-              <div style={{ 
-                marginTop: '32px', 
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                borderRadius: '20px',
-                padding: '40px',
-                position: 'relative',
-                overflow: 'hidden'
-              }}>
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                  <h3 style={{ fontSize: '20px', fontWeight: '700', color: 'white', marginBottom: '8px' }}>
-                    Modern Web Experiences
+          <div className="web-illus-hero">
+            <div className="sk sk-h1" />
+            <div className="sk sk-p" />
+            <div className="sk sk-p short" />
+            <div className="web-illus-hero-actions">
+              <div className="sk sk-btn" />
+              <div className="sk sk-btn ghost" />
+            </div>
+          </div>
+
+        
+
+          <div className="web-illus-footer">
+            <div className="sk sk-foot" />
+            <div className="sk sk-foot short" />
+          </div>
+        </div>
+      </div>
+
+      {/* Devices layer (responsive) */}
+      <div className="web-illus-devices" aria-hidden="true">
+        <div className="device phone">
+          <div className="device-notch" />
+          <div className="device-screen">
+            <div className="sk sk-mini" />
+            <div className="sk sk-mini" />
+            <div className="sk sk-mini tall" />
+          </div>
+        </div>
+
+        <div className="device tablet">
+          <div className="device-screen">
+            <div className="sk sk-mini wide" />
+            <div className="sk sk-mini wide" />
+            <div className="sk sk-mini tall" />
+          </div>
+        </div>
+      </div>
+
+      <div className="web-illus-glow" />
+    </div>
+  </div>
+
+  {/* Text RIGHT (minimal) */}
+  {/* <div className="service-split-copy">
+    <h3 className="service-title">Web Development</h3>
+    <p className="service-subtitle">
+      Clean UI, fast performance, and scalable architecture — built for growth.
+    </p>
+
+    <div className="service-chiprow">
+      <span className="service-chip"><Check size={16} /> Responsive</span>
+      <span className="service-chip"><Check size={16} /> SEO-ready</span>
+      <span className="service-chip"><Check size={16} /> Secure</span>
+    </div>
+  </div> */}
+  <div style={{ flex: '1 1 300px', minWidth: '280px' }}>
+                  <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'white', marginBottom: '12px' }}>
+                    Web Development
                   </h3>
-                  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', marginBottom: '24px' }}>
-                    From landing pages to complex web applications
+                  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.95)', marginBottom: '20px' }}>
+                    Clean UI, fast performance, and scalable architecture — built for growth.
                   </p>
                   
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} style={{
-                        background: 'white',
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    {['Responsive', 'SEO-ready', 'Secure'].map((tech) => (
+                      <div key={tech} style={{
+                        background: 'rgba(255,255,255,0.2)',
+                        padding: '12px 16px',
                         borderRadius: '12px',
-                        padding: '16px',
-                        height: '140px',
-                        boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+                        color: 'white',
+                        fontSize: '14px',
+                        fontWeight: '500',
+                        backdropFilter: 'blur(10px)'
                       }}>
-                        <div style={{ width: '100%', height: '20px', background: '#f1f5f9', borderRadius: '6px', marginBottom: '8px' }}></div>
-                        <div style={{ width: '70%', height: '16px', background: '#f1f5f9', borderRadius: '4px', marginBottom: '12px' }}></div>
-                        <div style={{ width: '100%', height: '60px', background: '#e0f2ff', borderRadius: '8px' }}></div>
+                        <Check size={16} style={{ display: 'inline', marginRight: '8px' }} />
+                        {tech}
                       </div>
                     ))}
                   </div>
                 </div>
-                
-                {/* Background decoration */}
-                <div style={{
-                  position: 'absolute',
-                  top: '-50px',
-                  right: '-50px',
-                  width: '200px',
-                  height: '200px',
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.1)',
-                  filter: 'blur(40px)'
-                }}></div>
-              </div>
-            </div>
+
+</div>
+
+</div>
+
 
             {/* Mobile Application */}
             <div id="mobile-app" className="product-display">
@@ -442,26 +437,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Features Grid */}
-              <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
-                {[
-                  { icon: Smartphone, title: 'Push Notifications', desc: 'Engage users with timely updates' },
-                  { icon: Layers, title: 'Offline Support', desc: 'Work seamlessly without internet' },
-                  { icon: Shield, title: 'Secure Storage', desc: 'Encrypted data protection' },
-                  { icon: Zap, title: 'Fast Performance', desc: 'Optimized for speed' }
-                ].map((feature, i) => (
-                  <div key={i} style={{
-                    background: 'white',
-                    borderRadius: '12px',
-                    padding: '20px',
-                    border: '1px solid var(--color-border-subtle)'
-                  }}>
-                    <feature.icon size={24} color="#f5576c" style={{ marginBottom: '12px' }} />
-                    <h4 style={{ fontSize: '14px', fontWeight: '600', marginBottom: '4px' }}>{feature.title}</h4>
-                    <p style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>{feature.desc}</p>
-                  </div>
-                ))}
-              </div>
+              
             </div>
 
             {/* Digital Marketing */}

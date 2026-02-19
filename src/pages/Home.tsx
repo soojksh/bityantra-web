@@ -38,298 +38,127 @@ export default function Home() {
   return (
     <div style={{ background: 'var(--color-bg)', minHeight: '100vh' }}>
       {/* HERO SECTION */}
-      <section className="hero-section">
+      {/* HERO SECTION */}
+<section className="hero-section">
   <div className="hero-inner">
     <div className="hero-left">
-      <div
-        style={{
-          display: "inline-block",
-          fontSize: "11px",
-          fontWeight: "600",
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          color: "#1d9bf0",
-          background:
-            "linear-gradient(135deg, rgba(29, 155, 240, 0.15), rgba(29, 155, 240, 0.05))",
-          padding: "6px 14px",
-          borderRadius: "999px",
-          marginBottom: "16px",
-          border: "1px solid rgba(29, 155, 240, 0.2)",
-        }}
-      >
-        ✨ Digital Innovation Partner
-      </div>
+      <div className="hero-pill">Digital Innovation Partner</div>
 
       <h1 className="hero-title">
         Build reliable products with{" "}
-        <span style={{ position: "relative", display: "inline-block" }}>
+        <span className="hero-brand">
           <img
             src="/image/logo.png"
             alt="bitYantra"
-            style={{
-              height: "42px",
-              width: "auto",
-              verticalAlign: "middle",
-              marginLeft: "4px",
-              filter: "drop-shadow(0 2px 8px rgba(29, 155, 240, 0.3))",
-            }}
+            className="hero-logo"
           />
         </span>
       </h1>
 
-      <p className="hero-subtitle" style={{ maxWidth: "480px", lineHeight: "1.7" }}>
+      <p className="hero-subtitle">
         Web, mobile and IoT experiences crafted with precision. From concept to deployment,
-        we transform your ideas into powerful digital solutions that drive real business results.
+        we transform your ideas into scalable digital solutions that drive real business results.
       </p>
 
-      <div className="hero-buttons" style={{ marginBottom: "24px" }}>
-        <button
-          className="hero-btn hero-btn-dark"
-          style={{
-            boxShadow: "0 4px 14px rgba(29, 155, 240, 0.4)",
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-          }}
-        >
-          Start a project
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </button>
+      <div className="hero-buttons">
+        <button className="hero-btn hero-btn-dark">Start a project</button>
 
-        <button
-          className="hero-btn hero-btn-outline"
-          style={{
-            background: "transparent",
-            border: "1px solid var(--color-border-strong)",
-            color: "var(--color-text-main)",
-          }}
-        >
+        <button className="hero-btn hero-btn-outline">
           View our work
         </button>
       </div>
 
       {/* Stats Section */}
-      <div
-        className="hero-stats"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "16px",
-          maxWidth: "460px",
-          marginTop: "28px",
-        }}
-      >
+      <div className="hero-stats">
         {[
-          { number: "100+", label: "Projects", icon: "🚀" },
-          { number: "24/7", label: "Support", icon: "💬" },
-          { number: "50+", label: "Clients", icon: "⭐" },
+          { number: "100+", label: "Projects Delivered" },
+          { number: "24/7", label: "Support Coverage" },
+          { number: "50+", label: "Active Clients" },
         ].map((stat, i) => (
-          <div
-            key={i}
-            className="hero-stat-card"
-            style={{
-              padding: "14px 12px",
-              borderRadius: "12px",
-              textAlign: "center",
-              transition: "transform 0.2s ease",
-              cursor: "pointer",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-2px)")}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
-          >
-            <div style={{ fontSize: "20px", marginBottom: "4px" }}>{stat.icon}</div>
-            <div style={{ fontSize: "20px", fontWeight: "700", color: "#1d9bf0", marginBottom: "2px" }}>
-              {stat.number}
-            </div>
-            <div
-              style={{
-                fontSize: "11px",
-                color: "var(--color-text-muted)",
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-              }}
-            >
-              {stat.label}
-            </div>
+          <div key={i} className="hero-stat-card">
+            <div className="hero-stat-number">{stat.number}</div>
+            <div className="hero-stat-label">{stat.label}</div>
           </div>
         ))}
       </div>
     </div>
 
     <div className="hero-right">
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "520px",
-          height: "400px",
-          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-          borderRadius: "24px",
-          padding: "28px",
-          position: "relative",
-          overflow: "hidden",
-          boxShadow: "0 25px 70px rgba(102, 126, 234, 0.35)",
-        }}
-      >
-        {/* Animated Background Circles */}
-        <div
-          style={{
-            position: "absolute",
-            top: "-40px",
-            right: "-40px",
-            width: "180px",
-            height: "180px",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(255,255,255,0.2), transparent)",
-            animation: "rotate 20s linear infinite",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-60px",
-            left: "-60px",
-            width: "200px",
-            height: "200px",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(255,255,255,0.15), transparent)",
-            animation: "rotate 25s linear infinite reverse",
-          }}
-        />
-
-        {/* Tech Stack Floating Cards */}
-        {[
-          { icon: "⚛️", label: "React", top: "20px", right: "20px", delay: "0s" },
-          { icon: "📱", label: "Mobile", top: "120px", left: "15px", delay: "0.4s" },
-          { icon: "🔧", label: "IoT", bottom: "80px", right: "25px", delay: "0.8s" },
-          { icon: "⚡", label: "Fast", bottom: "30px", left: "30px", delay: "1.2s" },
-        ].map((item, i) => (
-          <div
-            key={i}
-            style={{
-              position: "absolute",
-              ...(Object.fromEntries(
-                Object.entries(item).filter(([key]) => ["top", "bottom", "left", "right"].includes(key))
-              ) as any),
-              background: "rgba(255,255,255,0.95)",
-              borderRadius: "12px",
-              padding: "10px 14px",
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
-              animation: `float 3s ease-in-out infinite ${item.delay}`,
-              zIndex: 2,
-            }}
-          >
-            <span style={{ fontSize: "20px" }}>{item.icon}</span>
-            <span style={{ fontSize: "12px", fontWeight: "600", color: "#1e293b" }}>{item.label}</span>
+      {/* Clean product preview panel */}
+      <div className="hero-preview">
+        <div className="hero-preview-top">
+          <div className="hero-dots">
+            <span className="dot dot-red" />
+            <span className="dot dot-yellow" />
+            <span className="dot dot-green" />
           </div>
-        ))}
+          <div className="hero-preview-title">Project Overview</div>
+          <div className="hero-preview-badge">Live</div>
+        </div>
 
-        {/* Central Dashboard Mockup */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "25px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "320px",
-            height: "220px",
-            background: "white",
-            borderRadius: "16px",
-            padding: "18px",
-            boxShadow: "0 15px 50px rgba(0,0,0,0.25)",
-            zIndex: 3,
-          }}
-        >
-          <div style={{ display: "flex", gap: "6px", marginBottom: "14px" }}>
-            <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
-            <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#febc2e" }} />
-            <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28c840" }} />
+        <div className="hero-preview-body">
+          <div className="hero-metric-row">
+            <div className="hero-metric">
+              <div className="hero-metric-label">Deployment</div>
+              <div className="hero-metric-value">Stable</div>
+            </div>
+            <div className="hero-metric">
+              <div className="hero-metric-label">Latency</div>
+              <div className="hero-metric-value">~120ms</div>
+            </div>
+            <div className="hero-metric">
+              <div className="hero-metric-label">Uptime</div>
+              <div className="hero-metric-value">99.9%</div>
+            </div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <div
-                style={{
-                  height: "12px",
-                  width: "120px",
-                  background: "linear-gradient(90deg, #e0f2ff, #dbeafe)",
-                  borderRadius: "4px",
-                }}
-              />
-              <div style={{ height: "24px", width: "24px", background: "#667eea", borderRadius: "6px" }} />
+          <div className="hero-chart">
+            <div className="bar" />
+            <div className="bar" />
+            <div className="bar" />
+            <div className="bar" />
+            <div className="bar" />
+            <div className="bar" />
+            <div className="bar" />
+            <div className="bar" />
+            <div className="bar" />
+            <div className="bar" />
+          </div>
+
+          <div className="hero-list">
+            <div className="hero-list-item">
+              <div className="bullet" />
+              <div className="hero-list-text">
+                <div className="hero-list-title">Design system</div>
+                <div className="hero-list-sub">Consistent UI across web & mobile</div>
+              </div>
+              <div className="hero-list-tag">Done</div>
             </div>
 
-            <div style={{ display: "flex", gap: "8px", marginTop: "4px" }}>
-              {[60, 80, 50, 90, 70].map((h, i) => (
-                <div
-                  key={i}
-                  style={{
-                    flex: 1,
-                    background: "linear-gradient(180deg, #667eea, #764ba2)",
-                    borderRadius: "4px 4px 0 0",
-                    height: `${h}px`,
-                    alignSelf: "flex-end",
-                    opacity: 0.85,
-                    animation: `slideUp 0.6s ease-out ${i * 0.1}s backwards`,
-                  }}
-                />
-              ))}
+            <div className="hero-list-item">
+              <div className="bullet" />
+              <div className="hero-list-text">
+                <div className="hero-list-title">API integration</div>
+                <div className="hero-list-sub">Secure endpoints + monitoring</div>
+              </div>
+              <div className="hero-list-tag">Done</div>
             </div>
 
-            <div style={{ display: "flex", gap: "8px", marginTop: "8px" }}>
-              <div
-                style={{
-                  flex: 1,
-                  height: "45px",
-                  background: "linear-gradient(135deg, #e0f2ff, #dbeafe)",
-                  borderRadius: "8px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "18px",
-                }}
-              >
-                📊
+            <div className="hero-list-item">
+              <div className="bullet" />
+              <div className="hero-list-text">
+                <div className="hero-list-title">IoT pipeline</div>
+                <div className="hero-list-sub">Realtime device telemetry</div>
               </div>
-              <div
-                style={{
-                  flex: 1,
-                  height: "45px",
-                  background: "linear-gradient(135deg, #fef3c7, #fde68a)",
-                  borderRadius: "8px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "18px",
-                }}
-              >
-                🎯
-              </div>
+              <div className="hero-list-tag hero-list-tag-wip">In progress</div>
             </div>
           </div>
         </div>
-
-        <style>{`
-          @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
-          @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-          @keyframes slideUp { from { transform: scaleY(0); transform-origin: bottom; } to { transform: scaleY(1); transform-origin: bottom; } }
-        `}</style>
       </div>
     </div>
   </div>
 </section>
+
 
 
       {/* SERVICES SECTION */}
@@ -878,202 +707,101 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CASE STUDIES / TESTIMONIALS SECTION */}
-      <section style={{ 
-        width: 'min(96vw, 1320px)', 
-        margin: '60px auto 40px',
-        padding: '0 10px'
-      }}>
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <div style={{
-            display: 'inline-block',
-            fontSize: '12px',
-            fontWeight: '600',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            color: 'var(--color-primary-dark)',
-            background: 'var(--color-primary-soft)',
-            padding: '6px 16px',
-            borderRadius: '999px',
-            marginBottom: '12px'
-          }}>
-            Success Stories
-          </div>
-          <h2 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '8px' }}>
-            Trusted by Leading Brands
-          </h2>
-          <p style={{ fontSize: '14px', color: 'var(--color-text-muted)', maxWidth: '600px', margin: '0 auto' }}>
-            See how we've helped businesses transform their digital presence
+      {/* TESTIMONIALS SECTION */}
+      <section className="testimonials-section">
+        {/* Main centered heading block */}
+        <div className="testimonials-head">
+          <div className="testimonials-pill">Success Stories</div>
+          <h2 className="testimonials-title">Trusted by Leading Brands</h2>
+          <p className="testimonials-subtitle">
+            See how we&apos;ve helped businesses transform their digital presence
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
-          {/* Testimonial Card 1 */}
-          <div style={{
-            background: 'white',
-            borderRadius: '18px',
-            padding: '28px',
-            border: '1px solid var(--color-border-subtle)',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-            <div style={{
-              position: 'absolute',
-              top: '-20px',
-              right: '-20px',
-              width: '100px',
-              height: '100px',
-              borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(102, 126, 234, 0.15), transparent)',
-              filter: 'blur(20px)'
-            }}></div>
-            
-            <div style={{ position: 'relative', zIndex: 1 }}>
-              <div style={{ display: 'flex', gap: '4px', marginBottom: '16px' }}>
-                {[1,2,3,4,5].map((i) => (
-                  <Star key={i} size={18} fill="#fbbf24" color="#fbbf24" />
-                ))}
-              </div>
-              
-              <p style={{ fontSize: '14px', color: 'var(--color-text-main)', marginBottom: '20px', lineHeight: '1.6' }}>
-                "bitYantra transformed our outdated website into a modern, high-performing platform. 
-                Our conversion rate increased by 200% in just 3 months!"
-              </p>
-              
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #667eea, #764ba2)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontSize: '18px',
-                  fontWeight: '600'
-                }}>
-                  JD
+        {/* Testimonials container (separate block below heading) */}
+        <div className="testimonials-wrap">
+          <div className="testimonials-grid">
+            {/* Card 1 */}
+            <div className="testimonial-card">
+              <div className="testimonial-glow glow-indigo" />
+
+              <div className="testimonial-body">
+                <div className="testimonial-stars">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} size={18} fill="#fbbf24" color="#fbbf24" />
+                  ))}
                 </div>
-                <div>
-                  <div style={{ fontSize: '14px', fontWeight: '600' }}>John Doe</div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>CEO, TechStart Inc</div>
+
+                <p className="testimonial-quote">
+                  "bitYantra transformed our outdated website into a modern, high-performing platform.
+                  Our conversion rate increased by 200% in just 3 months!"
+                </p>
+
+                <div className="testimonial-person">
+                  <div className="testimonial-avatar avatar-indigo">JD</div>
+                  <div>
+                    <div className="testimonial-name">John Doe</div>
+                    <div className="testimonial-role">CEO, TechStart Inc</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Testimonial Card 2 */}
-          <div style={{
-            background: 'white',
-            borderRadius: '18px',
-            padding: '28px',
-            border: '1px solid var(--color-border-subtle)',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-            <div style={{
-              position: 'absolute',
-              top: '-20px',
-              right: '-20px',
-              width: '100px',
-              height: '100px',
-              borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(240, 147, 251, 0.15), transparent)',
-              filter: 'blur(20px)'
-            }}></div>
-            
-            <div style={{ position: 'relative', zIndex: 1 }}>
-              <div style={{ display: 'flex', gap: '4px', marginBottom: '16px' }}>
-                {[1,2,3,4,5].map((i) => (
-                  <Star key={i} size={18} fill="#fbbf24" color="#fbbf24" />
-                ))}
-              </div>
-              
-              <p style={{ fontSize: '14px', color: 'var(--color-text-main)', marginBottom: '20px', lineHeight: '1.6' }}>
-                "The mobile app they built exceeded all our expectations. The user experience is 
-                flawless and our customers love it. Highly recommended!"
-              </p>
-              
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #f093fb, #f5576c)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontSize: '18px',
-                  fontWeight: '600'
-                }}>
-                  SM
+            {/* Card 2 */}
+            <div className="testimonial-card">
+              <div className="testimonial-glow glow-pink" />
+
+              <div className="testimonial-body">
+                <div className="testimonial-stars">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} size={18} fill="#fbbf24" color="#fbbf24" />
+                  ))}
                 </div>
-                <div>
-                  <div style={{ fontSize: '14px', fontWeight: '600' }}>Sarah Miller</div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Product Manager, FitLife</div>
+
+                <p className="testimonial-quote">
+                  "The mobile app they built exceeded all our expectations. The user experience is
+                  flawless and our customers love it. Highly recommended!"
+                </p>
+
+                <div className="testimonial-person">
+                  <div className="testimonial-avatar avatar-pink">SM</div>
+                  <div>
+                    <div className="testimonial-name">Sarah Miller</div>
+                    <div className="testimonial-role">Product Manager, FitLife</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Testimonial Card 3 */}
-          <div style={{
-            background: 'white',
-            borderRadius: '18px',
-            padding: '28px',
-            border: '1px solid var(--color-border-subtle)',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-            <div style={{
-              position: 'absolute',
-              top: '-20px',
-              right: '-20px',
-              width: '100px',
-              height: '100px',
-              borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(29, 155, 240, 0.15), transparent)',
-              filter: 'blur(20px)'
-            }}></div>
-            
-            <div style={{ position: 'relative', zIndex: 1 }}>
-              <div style={{ display: 'flex', gap: '4px', marginBottom: '16px' }}>
-                {[1,2,3,4,5].map((i) => (
-                  <Star key={i} size={18} fill="#fbbf24" color="#fbbf24" />
-                ))}
-              </div>
-              
-              <p style={{ fontSize: '14px', color: 'var(--color-text-main)', marginBottom: '20px', lineHeight: '1.6' }}>
-                "Their IoT solution revolutionized our manufacturing process. Real-time monitoring 
-                has improved efficiency by 40%. Outstanding work!"
-              </p>
-              
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #4facfe, #00f2fe)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontSize: '18px',
-                  fontWeight: '600'
-                }}>
-                  RK
+            {/* Card 3 */}
+            <div className="testimonial-card">
+              <div className="testimonial-glow glow-cyan" />
+
+              <div className="testimonial-body">
+                <div className="testimonial-stars">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} size={18} fill="#fbbf24" color="#fbbf24" />
+                  ))}
                 </div>
-                <div>
-                  <div style={{ fontSize: '14px', fontWeight: '600' }}>Raj Kumar</div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>CTO, SmartFactory</div>
+
+                <p className="testimonial-quote">
+                  "Their IoT solution revolutionized our manufacturing process. Real-time monitoring
+                  has improved efficiency by 40%. Outstanding work!"
+                </p>
+
+                <div className="testimonial-person">
+                  <div className="testimonial-avatar avatar-cyan">RK</div>
+                  <div>
+                    <div className="testimonial-name">Raj Kumar</div>
+                    <div className="testimonial-role">CTO, SmartFactory</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* CTA SECTION */}
       <section style={{

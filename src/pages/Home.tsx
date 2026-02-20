@@ -266,106 +266,230 @@ export default function Home() {
           <div className="products-content">
             {/* Website Development */}
             <div id="website-dev" className="product-display">
-  <h2>Website Development</h2>
-  <p>Clean, responsive sites that convert visitors into customers</p>
+              <h2>Website Development</h2>
+              <p>Clean, responsive sites that convert visitors into customers</p>
 
-  {/* Like mobile-app, but VISUAL LEFT + TEXT RIGHT */}
-  <div className="service-split service-split--web service-split--reverse service-split--webpro">
-  {/* Visuals LEFT */}
-  <div className="service-split-visual">
-    <div className="web-illus">
-      {/* Browser window */}
-      <div className="web-illus-browser">
-        <div className="web-illus-top">
-          <span className="dot dot-red" />
-          <span className="dot dot-yellow" />
-          <span className="dot dot-green" />
-          <div className="web-illus-url">bitYantra.dev • Web Platform</div>
-          <div className="web-illus-status">Live</div>
-        </div>
+              {/* Same container style as mobile-app */}
+              <div className="service-panel service-panel--web">
+                {/* Visual LEFT */}
+                <div className="service-panel-visual">
+                <div className="desk-rec" aria-hidden="true">
+                  {/* Monitor */}
+                  <div className="desk-monitor">
+                    {/* Bezel */}
+                    <div className="desk-bezel">
+                      {/* Top bar */}
+                      <div className="desk-topbar">
+                        <div className="desk-dots">
+                          <span className="dot dot-red" />
+                          <span className="dot dot-yellow" />
+                          <span className="dot dot-green" />
+                        </div>
+                        <div className="desk-tab">Search</div>
+                        <div className="desk-url">www.search.dev</div>
+                        <div className="desk-right">
+                          <span className="desk-pill" />
+                          <span className="desk-pill soft" />
+                        </div>
+                      </div>
 
-        <div className="web-illus-body">
-          <div className="web-illus-nav">
-            <div className="sk sk-logo" />
-            <div className="sk sk-link" />
-            <div className="sk sk-link" />
-            <div className="sk sk-link short" />
-            <div className="sk sk-cta" />
-          </div>
+                      {/* Screen */}
+                      <div className="desk-screen">
+                        {/* Screen grain */}
+                        <div className="desk-grain" />
 
-          <div className="web-illus-hero">
-            <div className="sk sk-h1" />
-            <div className="sk sk-p" />
-            <div className="sk sk-p short" />
-            <div className="web-illus-hero-actions">
-              <div className="sk sk-btn" />
-              <div className="sk sk-btn ghost" />
-            </div>
-          </div>
+                        {/* Search header */}
+                        <div className="desk-header">
+                          <div className="desk-logo" />
+                          <div className="desk-searchbar">
+                            <span className="desk-typed">
+                              website development agency near me
+                            </span>
+                            <span className="desk-caret" />
+                          </div>
+                          <div className="desk-tools">
+                            <div className="desk-tool" />
+                            <div className="desk-tool" />
+                            <div className="desk-tool" />
+                          </div>
+                        </div>
 
-        
+                        {/* Content split (results + preview) */}
+                        <div className="desk-content">
+                          {/* Results */}
+                          <div className="desk-results">
+                            {Array.from({ length: 6 }).map((_, i) => (
+                              <div className={`desk-result ${i === 1 ? "active" : ""}`} key={i}>
+                                <div className="desk-title" />
+                                <div className="desk-urlrow">
+                                  <span className="desk-favicon" />
+                                  <div className="desk-urltext" />
+                                </div>
+                                <div className="desk-desc w90" />
+                                <div className={`desk-desc ${i % 2 === 0 ? "w75" : "w65"}`} />
+                              </div>
+                            ))}
+                          </div>
 
-          <div className="web-illus-footer">
-            <div className="sk sk-foot" />
-            <div className="sk sk-foot short" />
-          </div>
-        </div>
-      </div>
+                          {/* Website preview (scrolling) */}
+                          <div className="desk-preview">
+                            <div className="desk-preview-top">
+                              <span className="pv-chip" />
+                              <span className="pv-chip soft" />
+                              <span className="pv-chip soft2" />
+                            </div>
 
-      {/* Devices layer (responsive) */}
-      <div className="web-illus-devices" aria-hidden="true">
-        <div className="device phone">
-          <div className="device-notch" />
-          <div className="device-screen">
-            <div className="sk sk-mini" />
-            <div className="sk sk-mini" />
-            <div className="sk sk-mini tall" />
-          </div>
-        </div>
+                            <div className="desk-viewport">
+                              <div className="desk-page">
+                                <div className="page-hero">
+                                  <div className="page-h1" />
+                                  <div className="page-p w85" />
+                                  <div className="page-p w60" />
+                                  <div className="page-cta">
+                                    <div className="page-btn" />
+                                    <div className="page-btn ghost" />
+                                  </div>
+                                </div>
 
-        <div className="device tablet">
-          <div className="device-screen">
-            <div className="sk sk-mini wide" />
-            <div className="sk sk-mini wide" />
-            <div className="sk sk-mini tall" />
-          </div>
-        </div>
-      </div>
+                                <div className="page-row">
+                                  <div className="page-card" />
+                                  <div className="page-card" />
+                                  <div className="page-card" />
+                                </div>
 
-      <div className="web-illus-glow" />
-    </div>
-  </div>
+                                <div className="page-section">
+                                  <div className="page-sec-title w70" />
+                                  <div className="page-grid">
+                                    <div className="page-rowline" />
+                                    <div className="page-rowline" />
+                                    <div className="page-rowline" />
+                                    <div className="page-rowline" />
+                                  </div>
+                                </div>
 
+                                <div className="page-section">
+                                  <div className="page-sec-title w55" />
+                                  <div className="page-chart">
+                                    <div className="chart-grid">
+                                      <span />
+                                      <span />
+                                      <span />
+                                      <span />
+                                    </div>
+                                    <svg className="chart-line" viewBox="0 0 220 90" preserveAspectRatio="none">
+                                      <path d="M6,70 C35,66 40,58 62,55 C92,50 98,36 122,34 C145,32 155,20 178,22 C200,24 206,14 214,12" />
+                                    </svg>
+                                    <div className="chart-dot" />
+                                  </div>
+                                </div>
 
-  <div style={{ flex: '1 1 300px', minWidth: '280px' }}>
-                  <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'white', marginBottom: '12px' }}>
-                    Web Development
-                  </h3>
-                  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.95)', marginBottom: '20px' }}>
-                    Clean UI, fast performance, and scalable architecture — built for growth.
-                  </p>
-                  
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    {['Responsive', 'SEO-ready', 'Secure'].map((tech) => (
-                      <div key={tech} style={{
-                        background: 'rgba(255,255,255,0.2)',
-                        padding: '12px 16px',
-                        borderRadius: '12px',
-                        color: 'white',
-                        fontSize: '14px',
-                        fontWeight: '500',
-                        backdropFilter: 'blur(10px)'
-                      }}>
-                        <Check size={16} style={{ display: 'inline', marginRight: '8px' }} />
-                        {tech}
+                                <div className="page-footer">
+                                  <div className="page-foot w50" />
+                                  <div className="page-foot w35" />
+                                </div>
+                              </div>
+
+                              {/* duplicate for seamless scroll */}
+                              <div className="desk-page" aria-hidden="true">
+                                <div className="page-hero">
+                                  <div className="page-h1" />
+                                  <div className="page-p w85" />
+                                  <div className="page-p w60" />
+                                  <div className="page-cta">
+                                    <div className="page-btn" />
+                                    <div className="page-btn ghost" />
+                                  </div>
+                                </div>
+
+                                <div className="page-row">
+                                  <div className="page-card" />
+                                  <div className="page-card" />
+                                  <div className="page-card" />
+                                </div>
+
+                                <div className="page-section">
+                                  <div className="page-sec-title w70" />
+                                  <div className="page-grid">
+                                    <div className="page-rowline" />
+                                    <div className="page-rowline" />
+                                    <div className="page-rowline" />
+                                    <div className="page-rowline" />
+                                  </div>
+                                </div>
+
+                                <div className="page-section">
+                                  <div className="page-sec-title w55" />
+                                  <div className="page-chart">
+                                    <div className="chart-grid">
+                                      <span />
+                                      <span />
+                                      <span />
+                                      <span />
+                                    </div>
+                                    <svg className="chart-line" viewBox="0 0 220 90" preserveAspectRatio="none">
+                                      <path d="M6,70 C35,66 40,58 62,55 C92,50 98,36 122,34 C145,32 155,20 178,22 C200,24 206,14 214,12" />
+                                    </svg>
+                                    <div className="chart-dot" />
+                                  </div>
+                                </div>
+
+                                <div className="page-footer">
+                                  <div className="page-foot w50" />
+                                  <div className="page-foot w35" />
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Scroll bar */}
+                            <div className="desk-scrollbar">
+                              <span className="desk-scrollthumb" />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Cursor */}
+                        <div className="desk-cursor">
+                          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                            <path
+                              d="M4 3l7.8 17.2 2-6 6-2L4 3z"
+                              fill="rgba(255,255,255,0.96)"
+                              stroke="rgba(15,23,42,0.35)"
+                              strokeWidth="1"
+                            />
+                          </svg>
+                          <span className="desk-click" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Monitor stand */}
+                    <div className="desk-stand">
+                      <div className="desk-neck" />
+                      <div className="desk-base" />
+                    </div>
+                  </div>
+
+                  {/* Soft shadow/glow outside monitor only */}
+                  <div className="desk-shadow" />
+                </div>
+              </div>
+
+                {/* Text RIGHT */}
+                <div className="service-panel-text">
+                  <h3>Web Development</h3>
+                  <p>Clean UI, fast performance, and scalable architecture — built for growth.</p>
+
+                  <div className="service-panel-bullets">
+                    {["Responsive", "SEO-ready", "Secure"].map((t) => (
+                      <div className="service-panel-pill" key={t}>
+                        <Check size={16} style={{ display: "inline", marginRight: "8px" }} />
+                        {t}
                       </div>
                     ))}
                   </div>
                 </div>
-
-</div>
-
-</div>
+              </div>
+            </div>
 
 
             {/* Mobile Application */}
@@ -411,46 +535,137 @@ export default function Home() {
                 </div>
 
                 {/* Mobile Mockup */}
-                <div style={{ flex: '1 1 280px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                  <div style={{
-                    width: '200px',
-                    height: '400px',
-                    background: 'white',
-                    borderRadius: '32px',
-                    padding: '12px',
-                    boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
-                    position: 'relative'
-                  }}>
-                    {/* Phone notch */}
-                    <div style={{
-                      position: 'absolute',
-                      top: '12px',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      width: '100px',
-                      height: '20px',
-                      background: 'black',
-                      borderRadius: '0 0 16px 16px'
-                    }}></div>
-                    
-                    {/* Screen content */}
-                    <div style={{
-                      width: '100%',
-                      height: '100%',
-                      background: 'linear-gradient(180deg, #667eea 0%, #764ba2 100%)',
-                      borderRadius: '24px',
-                      padding: '32px 16px 16px',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '12px'
-                    }}>
-                      <div style={{ width: '100%', height: '60px', background: 'rgba(255,255,255,0.9)', borderRadius: '12px' }}></div>
-                      <div style={{ width: '100%', height: '40px', background: 'rgba(255,255,255,0.8)', borderRadius: '12px' }}></div>
-                      <div style={{ width: '100%', height: '40px', background: 'rgba(255,255,255,0.8)', borderRadius: '12px' }}></div>
-                      <div style={{ flex: 1, background: 'rgba(255,255,255,0.7)', borderRadius: '12px' }}></div>
-                    </div>
-                  </div>
+              {/* Mobile Mockup (real-like) */}
+<div
+  style={{
+    flex: "1 1 280px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }}
+>
+  <div className="mrec-wrap" aria-hidden="true">
+    <div className="mrec-phone">
+      {/* Bezel */}
+      <div className="mrec-bezel">
+        <div className="mrec-notch" />
+
+        {/* Screen */}
+        <div className="mrec-screen">
+          <div className="mrec-grain" />
+
+          {/* Status bar */}
+          <div className="mrec-status">
+            <span className="mrec-time">9:41</span>
+            <span className="mrec-signal" />
+            <span className="mrec-wifi" />
+            <span className="mrec-batt" />
+          </div>
+
+          {/* Search header (typing) */}
+          <div className="mrec-header">
+            <div className="mrec-avatar" />
+            <div className="mrec-search">
+              <span className="mrec-typed">best mobile app ui inspiration</span>
+              <span className="mrec-caret" />
+            </div>
+            <div className="mrec-chip" />
+          </div>
+
+          {/* Home icons (tap → open) */}
+          <div className="mrec-home">
+            <div className="mrec-icons">
+              {["Chat", "Shop", "Bank", "Maps", "Music", "Camera"].map((t) => (
+                <div className="mrec-icon" key={t}>
+                  <div className="mrec-icon-badge" />
+                  <div className="mrec-icon-square" />
+                  <div className="mrec-icon-label" />
                 </div>
+              ))}
+            </div>
+
+            {/* Opened app card */}
+            <div className="mrec-app">
+              <div className="mrec-appbar">
+                <div className="mrec-appbar-left">
+                  <div className="mrec-dot" />
+                  <div className="mrec-app-title" />
+                </div>
+                <div className="mrec-appbar-actions">
+                  <span className="mrec-mini-btn" />
+                  <span className="mrec-mini-btn" />
+                </div>
+              </div>
+
+              {/* Feed scroll loop */}
+              <div className="mrec-feed">
+                <div className="mrec-track">
+                  {Array.from({ length: 6 }).map((_, i) => (
+                    <div className="mrec-card" key={`t1-${i}`}>
+                      <div className="mrec-card-top">
+                        <span className="mrec-pill" />
+                        <span className="mrec-pill soft" />
+                      </div>
+                      <div className="mrec-hero" />
+                      <div className="mrec-lines">
+                        <div className="mrec-line w90" />
+                        <div className="mrec-line w70" />
+                      </div>
+                      <div className="mrec-actions">
+                        <span className="mrec-ico like" />
+                        <span className="mrec-ico msg" />
+                        <span className="mrec-ico share" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mrec-track" aria-hidden="true">
+                  {Array.from({ length: 6 }).map((_, i) => (
+                    <div className="mrec-card" key={`t2-${i}`}>
+                      <div className="mrec-card-top">
+                        <span className="mrec-pill" />
+                        <span className="mrec-pill soft" />
+                      </div>
+                      <div className="mrec-hero" />
+                      <div className="mrec-lines">
+                        <div className="mrec-line w90" />
+                        <div className="mrec-line w70" />
+                      </div>
+                      <div className="mrec-actions">
+                        <span className="mrec-ico like" />
+                        <span className="mrec-ico msg" />
+                        <span className="mrec-ico share" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom tab bar */}
+          <div className="mrec-tabbar">
+            <span className="mrec-tab active" />
+            <span className="mrec-tab" />
+            <span className="mrec-tab" />
+            <span className="mrec-tab" />
+          </div>
+
+          {/* Finger/cursor + tap ripple */}
+          <div className="mrec-pointer">
+            <span className="mrec-finger" />
+            <span className="mrec-tap" />
+          </div>
+        </div>
+      </div>
+
+      {/* Outer glow */}
+      <div className="mrec-glow" />
+    </div>
+  </div>
+</div>
+
               </div>
 
               
@@ -675,7 +890,7 @@ export default function Home() {
               </div>
 
               {/* IoT Features */}
-              <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+              {/* <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
                 {[
                   { icon: Globe, title: 'Remote Monitoring', desc: 'Track devices from anywhere' },
                   { icon: Shield, title: 'Secure Communication', desc: 'Encrypted data transmission' },
@@ -693,7 +908,7 @@ export default function Home() {
                     <p style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>{feature.desc}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -861,7 +1076,6 @@ export default function Home() {
                 e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
               }}>
                 Get Started Today
-                <ArrowRight size={18} style={{ display: 'inline', marginLeft: '8px', verticalAlign: 'middle' }} />
               </button>
               
               <button style={{

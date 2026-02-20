@@ -41,7 +41,7 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <ul className="nav-menu">
-            <li
+            {/* <li
               className="nav-item"
               onMouseEnter={() => setActiveMenu("product")}
               onMouseLeave={() => setActiveMenu(null)}
@@ -60,14 +60,14 @@ export default function Navbar() {
                   </a>
                 </div>
               </div>
-            </li>
+            </li> */}
 
-            <li
+            {/* <li
               className="nav-item"
               onMouseEnter={() => setActiveMenu("solutions")}
               onMouseLeave={() => setActiveMenu(null)}
             >
-              <span className="nav-link">Solutions ▾</span>
+              <span className="nav-link">Services ▾</span>
 
               <div className={`dropdown-menu ${activeMenu === "solutions" ? "active" : ""}`}>
                 <a href="#" className="dropdown-item">
@@ -77,8 +77,13 @@ export default function Navbar() {
                   </div>
                 </a>
               </div>
-            </li>
+            </li> */}
 
+            <li className="nav-item">
+              <Link to="#" className="nav-link">
+                Services
+              </Link>
+            </li>
             <li className="nav-item">
               <Link to="/about" className="nav-link">
                 About Us

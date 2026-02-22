@@ -154,13 +154,13 @@ export default function Contact() {
               </div>
 
               <div className="social-icons">
-                <a href="https://facebook.com" target="_blank" rel="noreferrer">
+                <a href="https://facebook.com" target="_blank" rel="noreferrer noopener" aria-label="Visit our Facebook page">
                   <Facebook size={20} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer">
+                <a href="https://instagram.com" target="_blank" rel="noreferrer noopener" aria-label="Visit our Instagram page">
                   <Instagram size={20} />
                 </a>
-                <a href="https://wa.me/9856945338" target="_blank" rel="noreferrer">
+                <a href="https://wa.me/9856945338" target="_blank" rel="noreferrer noopener" aria-label="Contact us on WhatsApp">
                   <MessageCircle size={20} />
                 </a>
               </div>

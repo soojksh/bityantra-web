@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Code, Smartphone, TrendingUp, Cpu, Check, Star, ArrowRight, Zap, Shield, Users, Globe, Layers, MessageCircle } from 'lucide-react';
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { TrendingUp, Cpu, Check, Star, Users, MessageCircle } from 'lucide-react';
 export default function Home() {
   const [activeProduct, setActiveProduct] = useState('website-dev');
 
@@ -26,7 +25,7 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       const navHeight = 90;

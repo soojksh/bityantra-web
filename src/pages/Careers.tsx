@@ -164,8 +164,8 @@ export default function Careers() {
                   <input className="form-input" type="email" placeholder="you@example.com" required />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">Applying for</label>
-                  <select className="form-select" defaultValue="Open Application">
+                  <label className="form-label" htmlFor="applying-for">Applying for</label>
+                  <select id="applying-for" className="form-select" defaultValue="Open Application">
                     <option>Open Application</option>
                     <option>Software Engineer Intern</option>
                     <option>UI/UX Intern</option>

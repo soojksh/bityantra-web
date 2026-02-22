@@ -3,14 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import "../index.css";
 
 export default function Navbar() {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Close menus when route changes
+  // Close mobile menu when route changes
   useEffect(() => {
     setMobileMenuOpen(false);
-    setActiveMenu(null);
   }, [location]);
 
   return (
@@ -41,54 +39,7 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <ul className="nav-menu">
-            {/* <li
-              className="nav-item"
-              onMouseEnter={() => setActiveMenu("product")}
-              onMouseLeave={() => setActiveMenu(null)}
-            >
-              <span className="nav-link">Product ▾</span>
-
-              <div className={`mega-menu ${activeMenu === "product" ? "active" : ""}`}>
-                <div className="mega-section">
-                  <div className="mega-title">Features</div>
-                  <a href="#" className="mega-item">
-                    <div className="mega-icon icon-purple">📁</div>
-                    <div className="mega-content">
-                      <h3>Team Workspace</h3>
-                      <p>Keep track of info.</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li> */}
-
-            {/* <li
-              className="nav-item"
-              onMouseEnter={() => setActiveMenu("solutions")}
-              onMouseLeave={() => setActiveMenu(null)}
-            >
-              <span className="nav-link">Services ▾</span>
-
-              <div className={`dropdown-menu ${activeMenu === "solutions" ? "active" : ""}`}>
-                <a href="#" className="dropdown-item">
-                  <div className="dropdown-icon">🏢</div>
-                  <div className="dropdown-content">
-                    <h4>Enterprise</h4>
-                  </div>
-                </a>
-              </div>
-            </li> */}
-
-            <li className="nav-item">
-              <Link to="#" className="nav-link">
-                Services
-              </Link>
-            </li>
-            {/* <li className="nav-item">
-              <Link to="/about" className="nav-link">
-                About Us
-              </Link>
-            </li> */}
+            
             <li className="nav-item">
               <Link to="/careers" className="nav-link">
                 Career
@@ -119,8 +70,8 @@ export default function Navbar() {
           <Link to="/" className="mobile-nav-link">
             Home
           </Link>
-          <Link to="/about" className="mobile-nav-link">
-            About Us
+          <Link to="/contact" className="mobile-nav-link">
+            Contact
           </Link>
           <Link to="/careers" className="mobile-nav-link">
             Careers

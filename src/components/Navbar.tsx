@@ -25,8 +25,8 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   // Update these with real values
-  const PHONE_DISPLAY = "+61 4XX XXX XXX";
-  const PHONE_TEL = "+614XXXXXXXX";
+  const PHONE_DISPLAY = "+977 9768987902";
+  const PHONE_TEL = "+977 9768987902";
   const EMAIL = "info@bityantra.com";
 
   return (

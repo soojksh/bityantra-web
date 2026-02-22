@@ -1,0 +1,52 @@
+
+/* CAREER SECTION */
+.career-section { width: min(96vw, 1320px); margin: 40px auto 0; position: relative; padding: 0 10px; }
+.career-hero { border-radius: 28px; padding: 28px 26px 26px; background: var(--color-bg), linear-gradient(135deg, #1d9bf0 0%, #4f46e5 40%, #0ea5e9 90%); color: #0f172a; position: relative; overflow: hidden; }
+.career-hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr); gap: 26px; align-items: center; }
+.career-hero-title { font-size: 30px; font-weight: 800; margin-bottom: 4px; color: #0f172a; }
+.career-hero-subtitle { font-size: 14px; color: #1f2933; margin-bottom: 14px; }
+.career-hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.chip { padding: 6px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.85); font-size: 12px; display: inline-flex; align-items: center; gap: 6px; color: #0f172a; }
+.chip-dot { width: 7px; height: 7px; border-radius: 999px; background: var(--color-primary); }
+
+/* Career Illustration & Graph */
+.career-illustration { width: 100%; max-width: 380px; border-radius: 22px; background: rgba(15, 23, 42, 0.03); padding: 14px; }
+.career-illustration-inner { border-radius: 18px; background: #0f172a; padding: 18px 16px 16px; }
+.career-graph-bars { display: flex; align-items: flex-end; gap: 6px; height: 70px; }
+.graph-bar { flex: 1; border-radius: 999px; background: linear-gradient(180deg, #e0f2fe, #1d9bf0); opacity: 0.6; height: 40px; }
+.graph-bar:nth-child(2) { height: 60px; } 
+
+/* Open Roles */
+.career-open-roles { margin-top: 40px; }
+.career-roles-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 18px; }
+.career-roles-title { font-size: 18px; font-weight: 700; }
+.career-roles-filters { display: flex; gap: 8px; }
+.filter-chip { border-radius: 999px; padding: 6px 10px; font-size: 12px; border: 1px solid var(--color-border-subtle); background: var(--color-surface-soft); color: var(--color-text-soft); }
+.filter-chip-primary { border-color: var(--color-primary); background: var(--color-primary-soft); color: var(--color-primary-dark); }
+.career-roles-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.role-card { background: var(--color-surface); border-radius: 18px; padding: 16px 14px 12px; border: 1px solid var(--color-border-subtle); display: flex; flex-direction: column; gap: 8px; transition: transform 0.18s ease; }
+.role-card:hover { transform: translateY(-3px); border-color: var(--color-primary-soft); }
+.role-header { display: flex; justify-content: space-between; align-items: flex-start; }
+.role-title { font-size: 14px; font-weight: 600; }
+.role-type { font-size: 11px; padding: 4px 8px; border-radius: 999px; background: var(--color-primary-soft); color: var(--color-primary-dark); }
+.role-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.role-tag { font-size: 11px; padding: 3px 8px; border-radius: 999px; background: var(--color-surface-soft); border: 1px solid var(--color-border-subtle); color: var(--color-text-soft); }
+
+/* Application Layout */
+.career-application { margin-top: 50px; margin-bottom: 60px; }
+.career-application-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr); gap: 24px; }
+.career-app-left { border-radius: 22px; padding: 20px 18px 18px; background: var(--color-surface); border: 1px solid var(--color-border-subtle); }
+.career-app-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.career-app-list { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--color-text-muted); }
+.career-app-form { border-radius: 22px; padding: 18px 18px 16px; background: #ffffff; border: 1px solid var(--color-border-subtle); }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; }
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-label { font-size: 12px; color: var(--color-text-soft); }
+.form-input, .form-select, .form-textarea { border-radius: 10px; border: 1px solid var(--color-border-subtle); padding: 7px 9px; font-size: 13px; background: var(--color-surface-soft); outline: none; }
+.form-input:focus, .form-textarea:focus { border-color: var(--color-primary); background: #fff; }
+.form-textarea { resize: vertical; min-height: 70px; }
+
+@media (max-width: 1200px) { .career-roles-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .career-application-layout { grid-template-columns: 1fr; } .career-hero-inner { grid-template-columns: 1fr; } .career-hero-right { display: none; } }
+@media (max-width: 768px) { .career-roles-grid { grid-template-columns: 1fr; } }
+

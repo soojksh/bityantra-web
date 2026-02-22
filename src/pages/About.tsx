@@ -1,4 +1,5 @@
 import '../index.css';
+import './about.css';
 
 export default function About() {
   return (

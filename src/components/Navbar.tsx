@@ -27,7 +27,7 @@ export default function Navbar() {
   // Update these with real values
   const PHONE_DISPLAY = "+61 4XX XXX XXX";
   const PHONE_TEL = "+614XXXXXXXX";
-  const EMAIL = "hello@bityantra.com";
+  const EMAIL = "info@bityantra.com";
 
   return (
     <>

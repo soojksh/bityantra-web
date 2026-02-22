@@ -50,3 +50,110 @@
 @media (max-width: 900px) { .career-application-layout { grid-template-columns: 1fr; } .career-hero-inner { grid-template-columns: 1fr; } .career-hero-right { display: none; } }
 @media (max-width: 768px) { .career-roles-grid { grid-template-columns: 1fr; } }
 
+
+/* =========================
+   Careers Hero Lottie Visual
+   ========================= */
+
+.career-hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card frame */
+.career-lottie-card {
+  position: relative;
+  width: min(520px, 100%);
+  aspect-ratio: 4 / 3;
+  border-radius: 22px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(14px);
+}
+
+/* Top bar */
+.career-lottie-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(2, 6, 23, 0.22);
+}
+
+.career-lottie-dots {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.career-lottie-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.01em;
+  flex: 1;
+}
+
+.career-lottie-badge {
+  font-size: 11px;
+  font-weight: 900;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.24);
+}
+
+/* Lottie stage */
+.career-lottie-stage {
+  height: calc(100% - 49px);
+  padding: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.career-lottie-stage > * {
+  width: 100%;
+  height: 100%;
+}
+
+/* Make lottie fill correctly */
+.career-lottie-stage canvas,
+.career-lottie-stage svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Glow */
+.career-lottie-glow {
+  position: absolute;
+  inset: auto -90px -90px auto;
+  width: 260px;
+  height: 260px;
+  border-radius: 999px;
+  background: rgba(29, 155, 240, 0.22);
+  filter: blur(44px);
+  pointer-events: none;
+}
+
+/* Responsive tuning */
+@media (max-width: 1024px) {
+  .career-lottie-card {
+    width: min(560px, 100%);
+    aspect-ratio: 16 / 11;
+  }
+}
+
+@media (max-width: 640px) {
+  .career-lottie-card {
+    width: 100%;
+    aspect-ratio: 16 / 12;
+    border-radius: 18px;
+  }
+  .career-lottie-stage {
+    padding: 10px;
+  }
+}

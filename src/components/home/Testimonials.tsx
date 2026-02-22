@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import "./testimonials.css";
 
 export default function Testimonials() {
   return (

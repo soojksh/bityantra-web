@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { TrendingUp, Cpu, Check, Users, MessageCircle } from "lucide-react";
+import "./services.css";
 
 export default function Services() {
   const [activeProduct, setActiveProduct] = useState("website-dev");

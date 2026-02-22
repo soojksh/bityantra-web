@@ -5,6 +5,16 @@ import "./services.css";
 
 type SectionId = "website-dev" | "mobile-app" | "digital-marketing" | "iot-hardware";
 
+type DetailGroup = {
+  title: string;
+  items: string[];
+};
+
+type BulletDetail = {
+  label: string;
+  groups: DetailGroup[];
+};
+
 type ServiceConfig = {
   id: SectionId;
   nav: string;
@@ -15,6 +25,7 @@ type ServiceConfig = {
   bullets: string[];
   themeClass: string;
   lottieSrc: string;
+  bulletDetails: Record<string, BulletDetail>;
 };
 
 export default function Services() {
@@ -29,10 +40,10 @@ export default function Services() {
         subtitle: "Clean, responsive sites that convert visitors into customers",
         panelTitle: "Web Development",
         panelDesc: "Modern UI, fast performance, and scalable architecture — built for growth.",
-        bullets: ["Responsive", "SEO-ready", "Secure"],
         themeClass: "service-panel--web",
-        lottieSrc:
-          "https://lottie.host/de03ccb2-a536-47d7-80e8-08fc8e728402/C7o8cKM5is.lottie",
+        lottieSrc: "https://lottie.host/6d9cf6b2-6e7e-4a76-9181-01f011246e66/NxND8wBa4n.lottie",
+        bullets: ["Business Websites", "E-Commerce", "Portfolio & Branding", "Custom Solutions"],
+        bulletDetails: {},
       },
       {
         id: "mobile-app",
@@ -41,10 +52,10 @@ export default function Services() {
         subtitle: "Android and iOS apps that users love",
         panelTitle: "Mobile App Development",
         panelDesc: "High-quality apps with smooth UX — native feel, cross-platform efficiency.",
-        bullets: ["React Native", "Flutter", "Native iOS/Android"],
         themeClass: "service-panel--mobile",
-        lottieSrc:
-          "https://lottie.host/c6197d2d-7193-4c89-be1d-e03d78841ecf/fXG84uaSde.lottie",
+        lottieSrc: "https://lottie.host/c6197d2d-7193-4c89-be1d-e03d78841ecf/fXG84uaSde.lottie",
+        bullets: ["Android & iOS", "UI/UX & Performance", "Backend & APIs", "Maintenance & Scaling"],
+        bulletDetails: {},
       },
       {
         id: "digital-marketing",
@@ -53,10 +64,10 @@ export default function Services() {
         subtitle: "Data-driven strategies that grow your business",
         panelTitle: "Digital Marketing",
         panelDesc: "Performance-focused campaigns that grow reach, trust, and conversions.",
-        bullets: ["SEO & Content", "Social Media", "Ads & Retargeting", "Analytics & Reporting"],
         themeClass: "service-panel--marketing",
-        lottieSrc:
-          "https://lottie.host/a2080ac5-3769-4173-a99e-4bac03a1155d/M1Fut7K438.lottie",
+        lottieSrc: "https://lottie.host/a2080ac5-3769-4173-a99e-4bac03a1155d/M1Fut7K438.lottie",
+        bullets: ["SEO 360", "Ads / Boosting", "Content Creation", "Social Media Management"],
+        bulletDetails: {},
       },
       {
         id: "iot-hardware",
@@ -65,17 +76,15 @@ export default function Services() {
         subtitle: "Smart devices and embedded systems for the connected world",
         panelTitle: "IoT & Hardware",
         panelDesc: "From prototypes to production-ready devices with cloud connectivity.",
-        bullets: ["Arduino & Raspberry Pi", "Embedded Systems", "Cloud Integration", "Device Prototyping"],
         themeClass: "service-panel--iot",
-        // Replace this with your final IoT .lottie link when you provide it
-        lottieSrc:
-          "https://lottie.host/de03ccb2-a536-47d7-80e8-08fc8e728402/C7o8cKM5is.lottie",
+        lottieSrc: "https://lottie.host/f6dbb92d-222a-465e-9a22-02ec53cdf4e0/6NIHf8RCWE.lottie",
+        bullets: ["Smart Machines", "Trackers & GPS", "IoT Systems", "Customization"],
+        bulletDetails: {},
       },
     ],
     []
   );
 
-  // ScrollSpy Logic (kept)
   useEffect(() => {
     const navHeight = 90;
 
@@ -108,7 +117,6 @@ export default function Services() {
   return (
     <section className="products-section">
       <div className="products-container">
-        {/* Sidebar */}
         <div className="products-sidebar" role="navigation" aria-label="Services navigation">
           {services.map((svc) => (
             <button
@@ -122,43 +130,40 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Content */}
         <div className="products-content">
-          {services.map((svc) => (
-            <div key={svc.id} id={svc.id} className="product-display">
-              <h2>{svc.title}</h2>
-              <p>{svc.subtitle}</p>
+          {services.map((svc, index) => {
+            const alternateClass = index % 2 === 1 ? "service-panel--reverse" : "";
 
-              <div className={`service-panel ${svc.themeClass}`}>
-                <div className="service-panel-visual" aria-hidden="true">
-                  {/* NO BOX/FRAME AROUND LOTTIE */}
-                  <DotLottieReact className="service-lottie" src={svc.lottieSrc} autoplay loop />
-                </div>
+            return (
+              <div key={svc.id} id={svc.id} className="product-display">
+                <h2>{svc.title}</h2>
+                <p>{svc.subtitle}</p>
 
-                <div className="service-panel-text">
-                  <h3>{svc.panelTitle}</h3>
-                  <p>{svc.panelDesc}</p>
-
-                  <div className="service-panel-bullets">
-                    {svc.bullets.map((t) => (
-                      <div className="service-panel-pill" key={t}>
-                        <Check size={16} className="pill-icon" />
-                        <span>{t}</span>
-                      </div>
-                    ))}
+                <div className={`service-panel ${svc.themeClass} ${alternateClass}`}>
+                  <div className="service-panel-visual" aria-hidden="true">
+                    <DotLottieReact className="service-lottie" src={svc.lottieSrc} autoplay loop />
                   </div>
 
-                  <div className="service-panel-note">
-                    Clean delivery, clear milestones, and performance-first implementation.
-                  </div>
-                </div>
+                  <div className="service-panel-text">
+                    <h3>{svc.panelTitle}</h3>
+                    <p>{svc.panelDesc}</p>
 
-                {/* Soft background ornament (same for all panels) */}
-                <span className="panel-orb orb-1" aria-hidden="true" />
-                <span className="panel-orb orb-2" aria-hidden="true" />
+                    <ul className="service-bullets" aria-label={`${svc.panelTitle} bullet points`}>
+                      {svc.bullets.map((label) => (
+                        <li key={label} className="service-bullet-item">
+                          <Check size={16} className="bullet-icon" aria-hidden="true" />
+                          <span>{label}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <span className="panel-orb orb-1" aria-hidden="true" />
+                  <span className="panel-orb orb-2" aria-hidden="true" />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

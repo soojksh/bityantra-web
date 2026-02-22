@@ -4,8 +4,8 @@
 
 .products-section {
   width: min(96vw, 1320px);
-  margin: 40px auto 0;
-  padding: 0 0 70px;
+  margin: clamp(14px, 3vw, 28px) auto 0;
+  padding: 0 0 clamp(28px, 5vw, 52px);
   position: relative;
 }
 
@@ -13,12 +13,12 @@
   width: 100%;
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
-  column-gap: 50px;
+  column-gap: clamp(18px, 3vw, 50px);
   align-items: flex-start;
 }
 
 /* =========================
-   Sidebar (Desktop)
+   Sidebar (Desktop default)
 ========================= */
 
 .products-sidebar {
@@ -49,6 +49,7 @@
   color: var(--color-text-soft);
   transition: color 0.18s ease;
   text-align: left;
+  white-space: nowrap;
 }
 
 .sidebar-item::after {
@@ -76,11 +77,7 @@
 }
 
 .sidebar-item.active {
-  background: linear-gradient(
-    90deg,
-    rgba(29, 155, 240, 0.10),
-    rgba(248, 250, 252, 0.35)
-  );
+  background: linear-gradient(90deg, rgba(29, 155, 240, 0.10), rgba(248, 250, 252, 0.35));
 }
 
 .sidebar-item.active h3 {
@@ -102,12 +99,12 @@
 }
 
 .product-display {
-  margin-bottom: 56px;
-  scroll-margin-top: calc(var(--nav-height) + 40px);
+  margin-bottom: clamp(22px, 4vw, 44px);
+  scroll-margin-top: calc(var(--nav-height) + 30px);
 }
 
 .product-display h2 {
-  font-size: 20px;
+  font-size: clamp(18px, 1.8vw, 20px);
   font-weight: 800;
   color: var(--color-text-main);
   margin-bottom: 4px;
@@ -115,48 +112,59 @@
 }
 
 .product-display p {
-  font-size: 13px;
+  font-size: clamp(12.5px, 1.2vw, 13px);
   color: var(--color-text-muted);
-  line-height: 1.6;
+  line-height: 1.55;
+  max-width: 72ch;
 }
 
 /* =========================
-   Unified Service Panel (ALL FOUR SAME SIZE)
+   Unified Service Panel
 ========================= */
 
 .service-panel {
-  margin-top: 24px;
+  margin-top: clamp(12px, 2vw, 18px);
   border-radius: 22px;
-  padding: 40px;
+  padding: clamp(18px, 2.6vw, 32px);
   display: grid;
   grid-template-columns: minmax(260px, 1fr) minmax(320px, 1fr);
-  gap: 32px;
+  gap: clamp(14px, 2.4vw, 28px);
   align-items: center;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
 
-  /* same feel for all */
-  min-height: 460px;
+  min-height: clamp(360px, 38vw, 460px);
 
   border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow: 0 26px 80px rgba(0, 0, 0, 0.18);
+}
+
+/* Alternate layout (visual right) */
+.service-panel--reverse {
+  grid-template-columns: minmax(320px, 1fr) minmax(260px, 1fr);
+}
+.service-panel--reverse .service-panel-visual {
+  order: 2;
+}
+.service-panel--reverse .service-panel-text {
+  order: 1;
 }
 
 .service-panel-visual {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0;
 }
 
-/* IMPORTANT: NO BOX AROUND LOTTIE */
+/* Lottie: fluid scaling */
 .service-lottie {
   width: min(420px, 100%);
   height: auto;
   aspect-ratio: 1 / 1;
 }
 
-/* Make sure dotLottie internal render fills properly */
 .service-lottie > div,
 .service-lottie canvas,
 .service-lottie svg {
@@ -164,8 +172,12 @@
   height: 100% !important;
 }
 
+.service-panel-text {
+  min-width: 0;
+}
+
 .service-panel-text h3 {
-  font-size: 24px;
+  font-size: clamp(18px, 2vw, 24px);
   font-weight: 900;
   color: #fff;
   margin-bottom: 10px;
@@ -173,42 +185,43 @@
 }
 
 .service-panel-text p {
-  font-size: 14px;
+  font-size: clamp(13px, 1.3vw, 14px);
   color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   line-height: 1.65;
+  max-width: 70ch;
 }
 
-.service-panel-bullets {
+/* =========================
+   Static Bullet Points
+========================= */
+
+.service-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  gap: 12px;
+  gap: clamp(8px, 1.4vw, 12px);
 }
 
-.service-panel-pill {
+.service-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   background: rgba(255, 255, 255, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 12px 16px;
+  padding: clamp(10px, 1.4vw, 12px) clamp(12px, 1.6vw, 16px);
   border-radius: 14px;
   color: #fff;
-  font-size: 14px;
+  font-size: clamp(13px, 1.25vw, 14px);
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 10px;
   backdrop-filter: blur(10px);
 }
 
-.pill-icon {
+.bullet-icon {
   opacity: 0.95;
-}
-
-.service-panel-note {
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.84);
-  line-height: 1.55;
+  margin-top: 2px;
+  flex: 0 0 auto;
 }
 
 /* Soft ornaments */
@@ -236,85 +249,136 @@
   background: rgba(255, 255, 255, 0.14);
 }
 
-/* =========================
-   Themes (same layout, different gradients)
-========================= */
-
+/* Themes */
 .service-panel--web {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
-
 .service-panel--mobile {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
-
 .service-panel--marketing {
   background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
 }
-
 .service-panel--iot {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   border: 1px solid rgba(29, 155, 240, 0.20);
 }
 
 /* =========================
-   Responsive: Hide sidebar on smaller screens
+   Expert Responsive Behavior
 ========================= */
 
-@media (max-width: 1024px) {
-  /* Sidebar OFF completely */
-  .products-sidebar {
-    display: none !important;
-  }
-
-  /* Content becomes full-width */
+/* 1) Laptop / small desktop: tighten sidebar */
+@media (max-width: 1100px) {
   .products-container {
-    grid-template-columns: 1fr;
-    column-gap: 0;
+    grid-template-columns: 220px minmax(0, 1fr);
   }
-
-  .product-display {
-    scroll-margin-top: 90px;
+  .products-sidebar {
+    padding-right: 14px;
   }
 }
 
-@media (max-width: 900px) {
+/* 2) Tablet & below: sidebar becomes horizontal scroll tabs (not hidden) */
+@media (max-width: 1024px) {
+  .products-container {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+
+  .products-sidebar {
+    position: sticky;
+    top: calc(var(--nav-height) + 10px);
+    z-index: 10;
+
+    flex-direction: row;
+    gap: 10px;
+
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-subtle);
+
+    padding: 10px 0 12px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(10px);
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .products-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-item {
+    margin: 0;
+    border-radius: 999px;
+    padding: 9px 12px;
+    background: rgba(2, 6, 23, 0.04);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    flex: 0 0 auto;
+  }
+
+  .sidebar-item::after {
+    display: none;
+  }
+
+  .sidebar-item h3 {
+    font-size: 13.5px;
+    color: rgba(15, 23, 42, 0.72);
+  }
+
+  .sidebar-item.active {
+    background: rgba(29, 155, 240, 0.12);
+    border-color: rgba(29, 155, 240, 0.22);
+  }
+
+  .sidebar-item.active h3 {
+    color: rgba(15, 23, 42, 0.92);
+  }
+
+  .product-display {
+    scroll-margin-top: calc(var(--nav-height) + 70px);
+  }
+}
+
+/* 3) Panel collapses to 1-column earlier for better UX */
+@media (max-width: 920px) {
   .service-panel {
-    padding: 26px 18px;
-    gap: 18px;
     grid-template-columns: 1fr;
     min-height: unset;
+  }
+
+  .service-panel--reverse {
+    grid-template-columns: 1fr;
   }
 
   .service-panel-visual {
     order: -1;
   }
 
-  .service-panel-text h3 {
-    font-size: 20px;
+  .service-panel--reverse .service-panel-visual,
+  .service-panel--reverse .service-panel-text {
+    order: initial;
   }
 
   .service-lottie {
-    width: min(420px, 100%);
+    width: min(380px, 100%);
   }
 }
 
+/* 4) Phone: tighten paddings + keep everything readable */
 @media (max-width: 520px) {
   .products-section {
     width: min(94vw, 1320px);
   }
 
   .product-display h2 {
-    font-size: 18px;
-  }
-
-  .service-panel-pill {
-    font-size: 13px;
-    padding: 11px 14px;
+    font-size: 17.5px;
   }
 
   .service-lottie {
-    width: min(360px, 100%);
+    width: min(330px, 100%);
   }
 }
 

@@ -84,14 +84,19 @@ export default function Navbar() {
                 Services
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/about" className="nav-link">
                 About Us
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to="/careers" className="nav-link">
                 Career
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/contact" className="nav-link">
+                Contact Us
               </Link>
             </li>
           </ul>

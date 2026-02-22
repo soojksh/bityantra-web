@@ -790,7 +790,7 @@ export default function Home() {
                       </p>
                       
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                        {['Arduino & Raspberry Pi', 'ESP32/ESP8266', 'Custom PCB Design', 'Cloud Integration'].map((tech) => (
+                        {['Arduino & Raspberry Pi',  'Custom PCB Design', 'Cloud Integration'].map((tech) => (
                           <div key={tech} style={{
                             background: 'rgba(29, 155, 240, 0.1)',
                             padding: '12px 16px',

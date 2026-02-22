@@ -260,8 +260,8 @@
   background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
 }
 .service-panel--iot {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border: 1px solid rgba(29, 155, 240, 0.20);
+  background: linear-gradient(135deg, #22c1c3 0%, #3a86ff 45%, #8338ec 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 /* =========================

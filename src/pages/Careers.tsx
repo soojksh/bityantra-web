@@ -31,17 +31,17 @@ export default function Careers() {
               Join bitYantra as an intern, collaborator or teammate. Design, ship and grow real products.
             </p>
 
-            <div className="career-hero-chips">
+            {/* <div className="career-hero-chips">
               <span className="chip">
                 <span className="chip-dot"></span> Internships
               </span>
               <span className="chip">
-                <span className="chip-dot"></span> Junior roles
+                <span className="chip-dot"></span> Collaborations
               </span>
               <span className="chip">
                 <span className="chip-dot"></span> Remote-friendly
               </span>
-            </div>
+            </div> */}
 
             <div className="career-hero-actions">
               <button
@@ -53,7 +53,7 @@ export default function Careers() {
                   });
                 }}
               >
-                View open roles
+                Stay tuned
               </button>
             </div>
           </div>
@@ -67,13 +67,11 @@ export default function Careers() {
                   <span className="dot dot-yellow" />
                   <span className="dot dot-green" />
                 </div>
-                <div className="career-lottie-title">bitYantra • Team</div>
-                <div className="career-lottie-badge">Hiring</div>
               </div>
 
               <div className="career-lottie-stage">
                 <DotLottieReact
-                  src="https://lottie.host/9569ed2f-4085-4f65-8841-132d15ef3e81/KhF5K5sSMS.json"
+                  src="https://lottie.host/54c7a74a-8083-4b31-91aa-ab6d7dc58f78/UY1zVV9w53.lottie"
                   loop
                   autoplay
                 />
@@ -87,77 +85,72 @@ export default function Careers() {
 
       {/* OPEN ROLES */}
       <section id="open-roles" className="career-open-roles">
-        <div className="career-roles-header">
-          <h2 className="career-roles-title">Open roles & collaborations</h2>
-          <div className="career-roles-filters">
+        {/* <div className="career-roles-header">
+          <h2 className="career-roles-title">Open roles</h2>
+          <div className="career-roles-filters" aria-hidden="true">
             <span className="filter-chip filter-chip-primary">All</span>
             <span className="filter-chip">Internship</span>
             <span className="filter-chip">Remote</span>
           </div>
-        </div>
+        </div> */}
 
-        <div className="career-roles-grid">
-          <article className="role-card">
-            <div className="role-header">
-              <div className="role-title">Software Engineer Intern</div>
-              <span className="role-type">Internship</span>
+        {/* No roles state */}
+        <div
+          className="role-card"
+          style={{
+            gridColumn: "1 / -1",
+            padding: "22px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px" }}>
+            <div className="role-title" style={{ fontSize: "14px", fontWeight: 700 }}>
+              No openings right now
             </div>
-            <div className="role-tags">
-              <span className="role-tag">React / JS</span>
-              <span className="role-tag">Node</span>
-            </div>
-            <div className="role-footer">
-              <button className="btn btn-outline" style={{ fontSize: "12px", padding: "6px 12px" }}>
-                Apply
-              </button>
-            </div>
-          </article>
+            <span className="role-type">Stay tuned</span>
+          </div>
 
-          <article className="role-card">
-            <div className="role-header">
-              <div className="role-title">UI / UX Design Intern</div>
-              <span className="role-type">Internship</span>
-            </div>
-            <div className="role-tags">
-              <span className="role-tag">Figma</span>
-              <span className="role-tag">Design Systems</span>
-            </div>
-            <div className="role-footer">
-              <button className="btn btn-outline" style={{ fontSize: "12px", padding: "6px 12px" }}>
-                Apply
-              </button>
-            </div>
-          </article>
+          <div style={{ fontSize: "13px", color: "var(--color-text-muted)", lineHeight: 1.55 }}>
+            We’ll post new opportunities here as soon as they open.
+            If you’d like, you can still send an open application and we’ll reach out when there’s a fit.
+          </div>
 
-          <article className="role-card">
-            <div className="role-header">
-              <div className="role-title">Digital Marketing Associate</div>
-              <span className="role-type">Junior</span>
-            </div>
-            <div className="role-tags">
-              <span className="role-tag">Social Media</span>
-              <span className="role-tag">Content</span>
-            </div>
-            <div className="role-footer">
-              <button className="btn btn-outline" style={{ fontSize: "12px", padding: "6px 12px" }}>
-                Apply
-              </button>
-            </div>
-          </article>
+          {/* <div className="role-tags" style={{ marginTop: "2px" }}>
+            <span className="role-tag">Open application</span>
+            <span className="role-tag">Internships</span>
+            <span className="role-tag">Collaborations</span>
+          </div> */}
+
+          <div className="role-footer" style={{ marginTop: "4px" }}>
+            <button
+              className="btn btn-outline"
+              style={{ fontSize: "12px", padding: "8px 12px" }}
+              onClick={() => {
+                document.getElementById("application")?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }}
+            >
+              Send an open application
+            </button>
+          </div>
         </div>
       </section>
 
       {/* APPLICATION FORM */}
       <section id="application" className="career-application">
-        <div className="career-application-layout">
-          <aside className="career-app-left">
-            <div className="career-app-title">Send your application.</div>
+        
+          {/* <aside className="career-app-left">
+            <div className="career-app-title">Send an open application.</div>
             <ul className="career-app-list">
-              <li>1. Choose a role or select "Open application".</li>
+              <li>1. Select “Open Application”.</li>
               <li>2. Share your details and portfolio links.</li>
-              <li>3. We review and get back to you.</li>
+              <li>3. We’ll reach out when there’s a match.</li>
             </ul>
-          </aside>
+          </aside> */}
 
           <div className="career-app-form">
             <form onSubmit={handleSubmit}>
@@ -172,27 +165,31 @@ export default function Careers() {
                 </div>
                 <div className="form-group">
                   <label className="form-label">Applying for</label>
-                  <select className="form-select">
+                  <select className="form-select" defaultValue="Open Application">
+                    <option>Open Application</option>
                     <option>Software Engineer Intern</option>
                     <option>UI/UX Intern</option>
-                    <option>Open Application</option>
+                    <option>Digital Marketing Associate</option>
                   </select>
                 </div>
               </div>
 
               <div className="form-group" style={{ marginTop: "10px" }}>
                 <label className="form-label">Short Note</label>
-                <textarea className="form-textarea" placeholder="Tell us about yourself"></textarea>
+                <textarea
+                  className="form-textarea"
+                  placeholder="Tell us what you’re great at, and share links (GitHub, portfolio, LinkedIn)."
+                ></textarea>
               </div>
 
               <div className="form-footer" style={{ marginTop: "12px" }}>
                 <button type="submit" className="btn btn-primary">
-                  Submit Application
+                  Submit application
                 </button>
               </div>
             </form>
           </div>
-        </div>
+        
       </section>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Code, Smartphone, TrendingUp, Cpu, Check, Star, ArrowRight, Zap, Shield, Users, Globe, Layers, MessageCircle } from 'lucide-react';
-
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 export default function Home() {
   const [activeProduct, setActiveProduct] = useState('website-dev');
 

@@ -171,7 +171,7 @@ export default function Navbar() {
 
             <div className="mobile-mini-note">
               <span className="dot" aria-hidden="true"></span>
-              <span>Support hours: Mon–Fri, 9am–6pm</span>
+              <span>Support hours: Sun–Fri, 9am–6pm</span>
             </div>
           </div>
         </div>

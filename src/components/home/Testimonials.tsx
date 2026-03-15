@@ -30,15 +30,15 @@ export default function Testimonials() {
                 </div>
 
                 <p className="testimonial-quote">
-                  "bitYantra transformed our outdated website into a modern, high-performing platform.
-                  Our conversion rate increased by 200% in just 3 months!"
+                  "bitYantra upgraded our business website into a fast, modern platform with clean UI.
+                  Within 8 weeks, we saw a major rise in inquiries and more walk-in customers from Google."
                 </p>
 
                 <div className="testimonial-person">
-                  <div className="testimonial-avatar avatar-indigo">JD</div>
+                  <div className="testimonial-avatar avatar-indigo">AS</div>
                   <div>
-                    <div className="testimonial-name">John Doe</div>
-                    <div className="testimonial-role">CEO, TechStart Inc</div>
+                    <div className="testimonial-name">Anish Shrestha</div>
+                    <div className="testimonial-role">Founder, Thamel Traders (Kathmandu)</div>
                   </div>
                 </div>
               </div>
@@ -56,15 +56,15 @@ export default function Testimonials() {
                 </div>
 
                 <p className="testimonial-quote">
-                  "The mobile app they built exceeded all our expectations. The user experience is
-                  flawless and our customers love it. Highly recommended!"
+                  "They built our delivery app for Android and iOS with a smooth user experience.
+                  Tracking, notifications, and admin features worked perfectly — our orders doubled during peak hours."
                 </p>
 
                 <div className="testimonial-person">
-                  <div className="testimonial-avatar avatar-pink">SM</div>
+                  <div className="testimonial-avatar avatar-pink">PN</div>
                   <div>
-                    <div className="testimonial-name">Sarah Miller</div>
-                    <div className="testimonial-role">Product Manager, FitLife</div>
+                    <div className="testimonial-name">Prakriti Neupane</div>
+                    <div className="testimonial-role">Operations Lead, Pokhara Fresh Mart</div>
                   </div>
                 </div>
               </div>
@@ -82,20 +82,19 @@ export default function Testimonials() {
                 </div>
 
                 <p className="testimonial-quote">
-                  "Their IoT solution revolutionized our manufacturing process. Real-time monitoring
-                  has improved efficiency by 40%. Outstanding work!"
+                  "Their IoT monitoring system helped us track temperature and machine status in real time.
+                  Downtime reduced significantly, and we now get instant alerts before problems become costly."
                 </p>
 
                 <div className="testimonial-person">
-                  <div className="testimonial-avatar avatar-cyan">RK</div>
+                  <div className="testimonial-avatar avatar-cyan">SG</div>
                   <div>
-                    <div className="testimonial-name">Raj Kumar</div>
-                    <div className="testimonial-role">CTO, SmartFactory</div>
+                    <div className="testimonial-name">Suman Gautam</div>
+                    <div className="testimonial-role">Plant Manager, Biratnagar Agro Processing</div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>

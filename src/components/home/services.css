@@ -136,8 +136,7 @@
 
   min-height: clamp(360px, 38vw, 460px);
 
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.18);
+  /* border: 1px solid rgba(255, 255, 255, 0.16); */
 }
 
 /* Alternate layout (visual right) */

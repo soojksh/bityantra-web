@@ -1,21 +1,66 @@
 import "../index.css";
 import "./contact.css";
-import React from "react";
+import React, { useState } from "react";
 import { Facebook, Instagram, MessageCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Message sent!");
-  };
-
-  const EMAIL = "hello@bityantra.com";
+  const EMAIL = "thisisooj@gmail.com";
   const PHONE = "9768987902";
   const ADDRESS = "Balkumari, Lalitpur-3, Nepal";
 
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    message: "",
+  });
+
+  const [isSending, setIsSending] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    try {
+      await emailjs.send(
+        "service_5ltwlkr",
+        "template_jt528n7",
+        {
+          to_email: "thisisooj@gmail.com",
+          from_name: formData.fullName,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "0te1j9VxTZ5lv9IIu"
+      );
+
+      alert("Message sent successfully!");
+
+      setFormData({
+        fullName: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <div className="contact-page">
-
       {/* HERO */}
       <section className="contact-hero">
         <div className="contact-shell">
@@ -23,7 +68,12 @@ export default function Contact() {
             <div className="contact-hero-left">
               <div className="section-badge">
                 <span>Contact</span>
-                <svg className="badge-accent" viewBox="0 0 120 8" fill="none" aria-hidden="true">
+                <svg
+                  className="badge-accent"
+                  viewBox="0 0 120 8"
+                  fill="none"
+                  aria-hidden="true"
+                >
                   <path
                     d="M0 4C20 1 40 1 60 4C80 7 100 7 120 4"
                     stroke="var(--color-primary)"
@@ -35,7 +85,8 @@ export default function Contact() {
 
               <h1 className="contact-hero-title">Let’s build something great.</h1>
               <p className="contact-hero-subtitle">
-                Tell us what you’re working on — we’ll reply with a clear plan and next steps.
+                Tell us what you’re working on — we’ll reply with a clear plan and
+                next steps.
               </p>
             </div>
 
@@ -74,7 +125,9 @@ export default function Contact() {
 
                   <div className="composer">
                     <div className="composer-input">
-                      <span className="typing-text">Hi bitYantra, I’d like a quote for...</span>
+                      <span className="typing-text">
+                        Hi bitYantra, I’d like a quote for...
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -100,23 +153,46 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="contact-form">
                 <div className="contact-grid">
                   <div className="form-group">
-                    <label>Full Name</label>
-                    <input type="text" placeholder="Your name" required />
+                    <label htmlFor="fullName">Full Name</label>
+                    <input
+                      id="fullName"
+                      type="text"
+                      name="fullName"
+                      placeholder="Your name"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
 
                   <div className="form-group">
-                    <label>Email</label>
-                    <input type="email" placeholder="you@example.com" required />
+                    <label htmlFor="email">Email</label>
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      placeholder="you@example.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                 </div>
 
                 <div className="form-group full">
-                  <label>Message</label>
-                  <textarea placeholder="What do you need help with?" required />
+                  <label htmlFor="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="What do you need help with?"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
 
-                <button type="submit" className="btn btn-primary">
-                  Send message
+                <button type="submit" className="btn btn-primary" disabled={isSending}>
+                  {isSending ? "Sending..." : "Send message"}
                 </button>
               </form>
             </div>
@@ -129,7 +205,9 @@ export default function Contact() {
 
               <div className="contact-details">
                 <div className="detail-row">
-                  <span className="detail-emoji" aria-hidden="true">✉️</span>
+                  <span className="detail-emoji" aria-hidden="true">
+                    ✉️
+                  </span>
                   <div>
                     <div className="label">Email</div>
                     <a className="value link" href={`mailto:${EMAIL}`}>
@@ -139,7 +217,9 @@ export default function Contact() {
                 </div>
 
                 <div className="detail-row">
-                  <span className="detail-emoji" aria-hidden="true">📍</span>
+                  <span className="detail-emoji" aria-hidden="true">
+                    📍
+                  </span>
                   <div>
                     <div className="label">Address</div>
                     <div className="value">{ADDRESS}</div>
@@ -147,7 +227,9 @@ export default function Contact() {
                 </div>
 
                 <div className="detail-row">
-                  <span className="detail-emoji" aria-hidden="true">📞</span>
+                  <span className="detail-emoji" aria-hidden="true">
+                    📞
+                  </span>
                   <div>
                     <div className="label">Phone</div>
                     <a className="value link" href={`tel:${PHONE}`}>
@@ -157,13 +239,28 @@ export default function Contact() {
                 </div>
 
                 <div className="social-icons">
-                  <a href="https://facebook.com" target="_blank" rel="noreferrer noopener" aria-label="Visit our Facebook page">
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="Visit our Facebook page"
+                  >
                     <Facebook size={20} />
                   </a>
-                  <a href="https://instagram.com" target="_blank" rel="noreferrer noopener" aria-label="Visit our Instagram page">
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="Visit our Instagram page"
+                  >
                     <Instagram size={20} />
                   </a>
-                  <a href={`https://wa.me/${PHONE}`} target="_blank" rel="noreferrer noopener" aria-label="Contact us on WhatsApp">
+                  <a
+                    href={`https://wa.me/${PHONE}`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="Contact us on WhatsApp"
+                  >
                     <MessageCircle size={20} />
                   </a>
                 </div>
